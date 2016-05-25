@@ -1,8 +1,8 @@
 ﻿#region
 
 using System;
-using OldMacDonald.Core;
-using OldMacDonald.Core.Animals;
+using OldMacDonald.Domain;
+using OldMacDonald.Domain.Animals;
 using OldMacDonald.Interfaces.BL;
 
 #endregion
@@ -19,17 +19,17 @@ namespace OldMacDonald.BL
         private static void GetAllAnimalsAndWriteToScreen(AnimalManager<AnimalBase> manager)
         {
             var initinitializeAnimalCounter = 0;
-            AnimalType _type;
             while (true)
             {
-                if (Enum.TryParse(initinitializeAnimalCounter.ToString(), false, out _type))
-                    if (Enum.IsDefined(typeof (AnimalType), _type))
-                    {
-                        Console.WriteLine(manager.InitializeAnimal(_type).GetGetAnimalNameAndSound());
-                        initinitializeAnimalCounter++;
-                    }
-                    else
-                        break;
+                AnimalType type;
+                if (!Enum.TryParse(initinitializeAnimalCounter.ToString(), false, out type)) continue;
+                if (Enum.IsDefined(typeof (AnimalType), type))
+                {
+                    Console.WriteLine(manager.InitializeAnimal(type).GetGetAnimalNameAndSound());
+                    initinitializeAnimalCounter++;
+                }
+                else
+                    break;
             }
         }
 

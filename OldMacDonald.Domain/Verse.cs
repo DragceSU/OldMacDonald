@@ -4,7 +4,7 @@ using System.Text;
 
 #endregion
 
-namespace OldMacDonald.Core
+namespace OldMacDonald.Domain
 {
     public static class Verse
     {

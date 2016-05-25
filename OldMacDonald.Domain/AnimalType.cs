@@ -1,4 +1,4 @@
-﻿namespace OldMacDonald.Core
+﻿namespace OldMacDonald.Domain
 {
     public enum AnimalType
     {

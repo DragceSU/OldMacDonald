@@ -4,7 +4,7 @@ using System;
 
 #endregion
 
-namespace OldMacDonald.Core.Animals
+namespace OldMacDonald.Domain.Animals
 {
     public class Cow : AnimalBase
     {
@@ -12,15 +12,6 @@ namespace OldMacDonald.Core.Animals
         {
             get { return AnimalType.Cow; }
         }
-
-        protected override string GetAnimalNameAndSound()
-        {
-            return _verse.Replace("@newLine", Environment.NewLine)
-                .Replace("@animal", AnimalName)
-                .Replace("@sound", AnimalSound)
-                .ToString();
-        }
-
 
         public override string AnimalName
         {
@@ -30,6 +21,14 @@ namespace OldMacDonald.Core.Animals
         public override string AnimalSound
         {
             get { return "moo"; }
+        }
+
+        protected override string GetAnimalNameAndSound()
+        {
+            return _verse.Replace("@newLine", Environment.NewLine)
+                .Replace("@animal", AnimalName)
+                .Replace("@sound", AnimalSound)
+                .ToString();
         }
     }
 }

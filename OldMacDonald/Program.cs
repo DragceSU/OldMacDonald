@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using Container;
 using Ninject;
 using OldMacDonald.BL;
-using OldMacDonald.Core;
+using OldMacDonald.Domain;
 
 #endregion
 
@@ -13,8 +13,6 @@ namespace OldMacDonald
 {
     internal class Program
     {
-        private static AnimalType _type;
-
         private static readonly Dictionary<string, string> _newAnimals = new Dictionary<string, string>
         {
             {"lion", "raw"},

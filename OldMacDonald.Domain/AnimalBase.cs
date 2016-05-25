@@ -2,11 +2,11 @@
 
 using System;
 using System.Text;
-using OldMacDonald.Core.Interfaces;
+using OldMacDonald.Domain.Interfaces;
 
 #endregion
 
-namespace OldMacDonald.Core
+namespace OldMacDonald.Domain
 {
     public abstract class AnimalBase : IAnimal
     {
