@@ -1,9 +1,10 @@
 ﻿#region
 
 using System;
+using System.Text;
+using OldMacDonald.BL.Interfaces;
 using OldMacDonald.Domain;
 using OldMacDonald.Domain.Animals;
-using OldMacDonald.Interfaces.BL;
 
 #endregion
 
@@ -11,29 +12,31 @@ namespace OldMacDonald.BL
 {
     public class AnimalManager<T> : IAnimalManager<T> where T : AnimalBase
     {
-        public void GetAnimals(AnimalManager<AnimalBase> manager)
+        public string GetAnimals()
         {
-            GetAllAnimalsAndWriteToScreen(manager);
+            return WriteAllAnimalstToScreen();
         }
 
-        private static void GetAllAnimalsAndWriteToScreen(AnimalManager<AnimalBase> manager)
+        private static string WriteAllAnimalstToScreen()
         {
             var initinitializeAnimalCounter = 0;
+            StringBuilder textToBeReturned = new StringBuilder();
             while (true)
             {
                 AnimalType type;
                 if (!Enum.TryParse(initinitializeAnimalCounter.ToString(), false, out type)) continue;
                 if (Enum.IsDefined(typeof(AnimalType), type))
                 {
-                    Console.WriteLine(manager.InitializeAnimal(type).GetGetAnimalNameAndSound());
+                    textToBeReturned.Append(InitializeAnimal(type).GetGetAnimalNameAndSound());
                     initinitializeAnimalCounter++;
                 }
                 else
                     break;
             }
+            return textToBeReturned.ToString();
         }
 
-        private T InitializeAnimal(AnimalType type)
+        private static T InitializeAnimal(AnimalType type)
         {
             switch (type)
             {
@@ -51,7 +54,7 @@ namespace OldMacDonald.BL
             return null;
         }
 
-        public string InitializeCustomAnimal(string animalName, string animalSound)
+        public static string InitializeCustomAnimal(string animalName, string animalSound)
         {
             return AnimalBase.GetInternalAnimalNameAndSound(animalName, animalSound);
         }

@@ -2,4 +2,3 @@ C:\Users\Dragan\Desktop\OldMacDonald\OldMacDonald.Domain\bin\Debug\OldMacDonald.
 C:\Users\Dragan\Desktop\OldMacDonald\OldMacDonald.Domain\bin\Debug\OldMacDonald.Domain.pdb
 C:\Users\Dragan\Desktop\OldMacDonald\OldMacDonald.Domain\obj\Debug\OldMacDonald.Domain.dll
 C:\Users\Dragan\Desktop\OldMacDonald\OldMacDonald.Domain\obj\Debug\OldMacDonald.Domain.pdb
-C:\Users\Dragan\Desktop\OldMacDonald\OldMacDonald.Domain\obj\Debug\OldMacDonald.Core.csprojResolveAssemblyReference.cache

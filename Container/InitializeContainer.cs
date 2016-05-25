@@ -2,8 +2,8 @@
 
 using Ninject;
 using OldMacDonald.BL;
+using OldMacDonald.BL.Interfaces;
 using OldMacDonald.Domain;
-using OldMacDonald.Interfaces.BL;
 
 #endregion
 

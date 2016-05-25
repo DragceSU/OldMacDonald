@@ -1,14 +1,13 @@
 #region
 
-using OldMacDonald.BL;
 using OldMacDonald.Domain;
 
 #endregion
 
-namespace OldMacDonald.Interfaces.BL
+namespace OldMacDonald.BL.Interfaces
 {
     public interface IAnimalManager<T> where T : AnimalBase
     {
-        void GetAnimals(AnimalManager<AnimalBase> manager);
+        string GetAnimals();
     }
 }

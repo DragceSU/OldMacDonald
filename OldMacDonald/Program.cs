@@ -27,12 +27,12 @@ namespace OldMacDonald
             InitializeContainer.Register(kernel);
 
             var manager = kernel.Get<AnimalManager<AnimalBase>>();
-            manager.GetAnimals(manager);
+            Console.WriteLine(manager.GetAnimals());
 
             // Custom animal types in case of user specific definitions
             foreach (var animal in _newAnimals)
             {
-                Console.WriteLine(AnimalBase.GetInternalAnimalNameAndSound(animal.Key, animal.Value));
+                Console.WriteLine(AnimalManager<AnimalBase>.InitializeCustomAnimal(animal.Key, animal.Value));
             }
         }
     }
