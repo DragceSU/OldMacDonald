@@ -1,0 +1,7 @@
+C:\Users\Dragan\Desktop\OldMacDonald\OldMacDonald.BL\bin\Debug\OldMacDonald.BL.dll
+C:\Users\Dragan\Desktop\OldMacDonald\OldMacDonald.BL\bin\Debug\OldMacDonald.BL.pdb
+C:\Users\Dragan\Desktop\OldMacDonald\OldMacDonald.BL\bin\Debug\OldMacDonald.Domain.dll
+C:\Users\Dragan\Desktop\OldMacDonald\OldMacDonald.BL\bin\Debug\OldMacDonald.Domain.pdb
+C:\Users\Dragan\Desktop\OldMacDonald\OldMacDonald.BL\obj\Debug\OldMacDonald.BL.csprojResolveAssemblyReference.cache
+C:\Users\Dragan\Desktop\OldMacDonald\OldMacDonald.BL\obj\Debug\OldMacDonald.BL.dll
+C:\Users\Dragan\Desktop\OldMacDonald\OldMacDonald.BL\obj\Debug\OldMacDonald.BL.pdb
