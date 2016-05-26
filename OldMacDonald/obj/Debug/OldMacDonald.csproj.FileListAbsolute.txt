@@ -12,3 +12,17 @@ C:\Users\Dragan\Desktop\OldMacDonald\OldMacDonald\bin\Debug\Ninject.xml
 C:\Users\Dragan\Desktop\OldMacDonald\OldMacDonald\obj\Debug\OldMacDonald.csprojResolveAssemblyReference.cache
 C:\Users\Dragan\Desktop\OldMacDonald\OldMacDonald\obj\Debug\OldMacDonald.exe
 C:\Users\Dragan\Desktop\OldMacDonald\OldMacDonald\obj\Debug\OldMacDonald.pdb
+E:\GitHub\OldMacDonald\OldMacDonald\bin\Debug\OldMacDonald.exe.config
+E:\GitHub\OldMacDonald\OldMacDonald\obj\Debug\OldMacDonald.exe
+E:\GitHub\OldMacDonald\OldMacDonald\obj\Debug\OldMacDonald.pdb
+E:\GitHub\OldMacDonald\OldMacDonald\bin\Debug\OldMacDonald.exe
+E:\GitHub\OldMacDonald\OldMacDonald\bin\Debug\OldMacDonald.pdb
+E:\GitHub\OldMacDonald\OldMacDonald\bin\Debug\Container.dll
+E:\GitHub\OldMacDonald\OldMacDonald\bin\Debug\Ninject.dll
+E:\GitHub\OldMacDonald\OldMacDonald\bin\Debug\OldMacDonald.BL.dll
+E:\GitHub\OldMacDonald\OldMacDonald\bin\Debug\OldMacDonald.Domain.dll
+E:\GitHub\OldMacDonald\OldMacDonald\bin\Debug\Container.pdb
+E:\GitHub\OldMacDonald\OldMacDonald\bin\Debug\OldMacDonald.BL.pdb
+E:\GitHub\OldMacDonald\OldMacDonald\bin\Debug\OldMacDonald.Domain.pdb
+E:\GitHub\OldMacDonald\OldMacDonald\bin\Debug\Ninject.xml
+E:\GitHub\OldMacDonald\OldMacDonald\obj\Debug\OldMacDonald.csprojResolveAssemblyReference.cache
