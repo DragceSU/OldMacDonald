@@ -74,7 +74,7 @@
     </Module>
     <Module skippedDueTo="MissingPdb" hash="">
       <FullName>RefEmit_InMemoryManifestModule</FullName>
-      <ModuleName>MetadataViewProxies_2d34e8bc-f3e2-40c7-b026-a02b42c9ce5a</ModuleName>
+      <ModuleName>MetadataViewProxies_093b6279-d3e3-4945-afc1-672472d184db</ModuleName>
       <Classes />
     </Module>
     <Module skippedDueTo="MissingPdb" hash="EC-EB-0C-B7-2A-06-A8-2E-67-58-FF-C7-30-AF-90-EA-DB-3F-D9-A5">
@@ -159,7 +159,7 @@
     </Module>
     <Module skippedDueTo="MissingPdb" hash="">
       <FullName>RefEmit_InMemoryManifestModule</FullName>
-      <ModuleName>MetadataViewProxies_2d34e8bc-f3e2-40c7-b026-a02b42c9ce5a</ModuleName>
+      <ModuleName>MetadataViewProxies_093b6279-d3e3-4945-afc1-672472d184db</ModuleName>
       <Classes />
     </Module>
     <Module skippedDueTo="MissingPdb" hash="CD-B3-17-56-CA-2B-DF-F1-86-B3-80-6C-CA-87-A1-BD-64-B6-30-0C">
@@ -167,7 +167,7 @@
       <ModuleName>Microsoft.VisualStudio.TestPlatform.ObjectModel</ModuleName>
       <Classes />
     </Module>
-    <Module hash="CC-65-DE-EA-78-44-ED-58-8E-2A-55-44-FF-18-74-1A-56-BB-CB-41">
+    <Module hash="AC-96-9F-6F-4E-48-C4-76-DA-1F-35-C5-A1-44-E7-5F-7B-38-27-BC">
       <Summary numSequencePoints="18" visitedSequencePoints="18" numBranchPoints="4" visitedBranchPoints="4" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="1" numClasses="1" visitedMethods="4" numMethods="4" />
       <FullName>E:\TeamCity\buildAgent\work\30236e2a569e6bdd\OldMacDonald.Tests\bin\Debug\OldMacDonald.Tests.dll</FullName>
       <ModuleName>OldMacDonald.Tests</ModuleName>
@@ -38759,7 +38759,7 @@
         </Class>
       </Classes>
     </Module>
-    <Module hash="21-0E-74-2D-DA-28-4D-DD-71-D4-16-25-A7-61-60-48-BE-5C-14-1D">
+    <Module hash="D5-67-ED-17-04-78-74-8F-12-01-4B-32-7A-71-E7-8E-BC-10-D5-6E">
       <Summary numSequencePoints="31" visitedSequencePoints="3" numBranchPoints="14" visitedBranchPoints="1" sequenceCoverage="9.68" branchCoverage="7.14" maxCyclomaticComplexity="7" minCyclomaticComplexity="1" visitedClasses="1" numClasses="1" visitedMethods="1" numMethods="4" />
       <FullName>E:\TeamCity\buildAgent\work\30236e2a569e6bdd\OldMacDonald.Tests\bin\Debug\OldMacDonald.BL.dll</FullName>
       <ModuleName>OldMacDonald.BL</ModuleName>
@@ -38871,7 +38871,7 @@
         </Class>
       </Classes>
     </Module>
-    <Module hash="08-EB-07-B8-A4-87-EB-EB-CB-4C-74-F7-86-2F-F7-08-B5-44-1E-29">
+    <Module hash="6F-96-12-E5-84-95-F9-56-F0-DB-EB-85-A6-97-59-B0-03-49-68-39">
       <Summary numSequencePoints="76" visitedSequencePoints="9" numBranchPoints="26" visitedBranchPoints="3" sequenceCoverage="11.84" branchCoverage="11.54" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="2" numClasses="7" visitedMethods="3" numMethods="26" />
       <FullName>E:\TeamCity\buildAgent\work\30236e2a569e6bdd\OldMacDonald.Tests\bin\Debug\OldMacDonald.Domain.dll</FullName>
       <ModuleName>OldMacDonald.Domain</ModuleName>
