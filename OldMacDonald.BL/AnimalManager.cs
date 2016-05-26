@@ -15,7 +15,7 @@ namespace OldMacDonald.BL
         public string GetAnimals()
         {
             var initinitializeAnimalCounter = 0;
-            StringBuilder textToBeReturned = new StringBuilder();
+            var textToBeReturned = new StringBuilder();
             while (true)
             {
                 AnimalType type;
@@ -45,8 +45,9 @@ namespace OldMacDonald.BL
                     return new Cow() as T;
                 case AnimalType.Duck:
                     return new Duck() as T;
+                default:
+                    return null;
             }
-            return null;
         }
 
         public static string InitializeCustomAnimal(string animalName, string animalSound)
