@@ -41,7 +41,7 @@ namespace OldMacDonald.Tests.BL
             _originalVerseMOQ.Setup(manager => manager.GetAnimals()).Returns(_originalVerse);
             string animal = _originalVerseMOQ.Object.GetAnimals().Replace("@newLine", Environment.NewLine)
                 .Replace("@animal", _animalName)
-                .Replace("@sound", _animalSound); ;
+                .Replace("@sound", _animalSound);
 
             string getAnimalFromBase = AnimalManager<AnimalBase>.InitializeCustomAnimal(_animalName, _animalSound).Replace("@newLine", Environment.NewLine)
                 .Replace("@animal", _animalName)
