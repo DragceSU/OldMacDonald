@@ -74,7 +74,7 @@
     </Module>
     <Module skippedDueTo="MissingPdb" hash="">
       <FullName>RefEmit_InMemoryManifestModule</FullName>
-      <ModuleName>MetadataViewProxies_deed84f1-2cac-4cde-8350-de9308f83858</ModuleName>
+      <ModuleName>MetadataViewProxies_57d56494-b8de-462b-b1da-a19f1e89da25</ModuleName>
       <Classes />
     </Module>
     <Module skippedDueTo="MissingPdb" hash="EC-EB-0C-B7-2A-06-A8-2E-67-58-FF-C7-30-AF-90-EA-DB-3F-D9-A5">
@@ -159,7 +159,7 @@
     </Module>
     <Module skippedDueTo="MissingPdb" hash="">
       <FullName>RefEmit_InMemoryManifestModule</FullName>
-      <ModuleName>MetadataViewProxies_deed84f1-2cac-4cde-8350-de9308f83858</ModuleName>
+      <ModuleName>MetadataViewProxies_57d56494-b8de-462b-b1da-a19f1e89da25</ModuleName>
       <Classes />
     </Module>
     <Module skippedDueTo="MissingPdb" hash="CD-B3-17-56-CA-2B-DF-F1-86-B3-80-6C-CA-87-A1-BD-64-B6-30-0C">
@@ -167,7 +167,7 @@
       <ModuleName>Microsoft.VisualStudio.TestPlatform.ObjectModel</ModuleName>
       <Classes />
     </Module>
-    <Module hash="F1-44-37-B6-46-30-C0-D9-5B-8A-D0-39-46-98-50-A8-33-C7-DD-DC">
+    <Module hash="ED-08-44-23-45-5A-F3-2D-CE-8D-00-22-BC-36-B8-7A-A7-48-09-62">
       <Summary numSequencePoints="81" visitedSequencePoints="81" numBranchPoints="12" visitedBranchPoints="12" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="2" numClasses="2" visitedMethods="12" numMethods="12" />
       <FullName>E:\TeamCity\buildAgent\work\30236e2a569e6bdd\OldMacDonald.Tests\bin\Debug\OldMacDonald.Tests.dll</FullName>
       <ModuleName>OldMacDonald.Tests</ModuleName>
@@ -38917,7 +38917,7 @@
         </Class>
       </Classes>
     </Module>
-    <Module hash="0B-08-3B-EA-25-81-4E-24-F7-34-6E-90-34-E1-A7-BA-99-DF-4C-05">
+    <Module hash="D0-32-11-60-E2-7A-14-35-E2-08-D2-99-D9-BD-4A-F4-A9-1C-43-64">
       <Summary numSequencePoints="28" visitedSequencePoints="26" numBranchPoints="13" visitedBranchPoints="11" sequenceCoverage="92.86" branchCoverage="84.62" maxCyclomaticComplexity="7" minCyclomaticComplexity="1" visitedClasses="1" numClasses="1" visitedMethods="3" numMethods="3" />
       <FullName>E:\TeamCity\buildAgent\work\30236e2a569e6bdd\OldMacDonald.Tests\bin\Debug\OldMacDonald.BL.dll</FullName>
       <ModuleName>OldMacDonald.BL</ModuleName>
@@ -38978,8 +38978,8 @@
                 <SequencePoint vc="2" uspid="4450" ordinal="4" offset="67" sl="43" sc="21" el="43" ec="43" bec="0" bev="0" fileid="5" />
                 <SequencePoint vc="2" uspid="4451" ordinal="5" offset="85" sl="45" sc="21" el="45" ec="43" bec="0" bev="0" fileid="5" />
                 <SequencePoint vc="2" uspid="4452" ordinal="6" offset="103" sl="47" sc="21" el="47" ec="44" bec="0" bev="0" fileid="5" />
-                <SequencePoint vc="0" uspid="4453" ordinal="7" offset="121" sl="49" sc="21" el="49" ec="33" bec="0" bev="0" fileid="5" />
-                <SequencePoint vc="10" uspid="4454" ordinal="8" offset="133" sl="51" sc="9" el="51" ec="10" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="0" uspid="4453" ordinal="7" offset="121" sl="49" sc="13" el="49" ec="25" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="10" uspid="4454" ordinal="8" offset="133" sl="50" sc="9" el="50" ec="10" bec="0" bev="0" fileid="5" />
               </SequencePoints>
               <BranchPoints>
                 <BranchPoint vc="0" uspid="4455" ordinal="0" offset="4" sl="36" path="0" offsetchain="29" offsetend="121" fileid="5" />
@@ -38997,12 +38997,12 @@
               <Name>System.String OldMacDonald.BL.AnimalManager`1::InitializeCustomAnimal(System.String,System.String)</Name>
               <FileRef uid="5" />
               <SequencePoints>
-                <SequencePoint vc="2" uspid="4461" ordinal="0" offset="0" sl="54" sc="9" el="54" ec="10" bec="0" bev="0" fileid="5" />
-                <SequencePoint vc="2" uspid="4462" ordinal="1" offset="1" sl="55" sc="13" el="55" ec="86" bec="0" bev="0" fileid="5" />
-                <SequencePoint vc="2" uspid="4463" ordinal="2" offset="11" sl="56" sc="9" el="56" ec="10" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="2" uspid="4461" ordinal="0" offset="0" sl="53" sc="9" el="53" ec="10" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="2" uspid="4462" ordinal="1" offset="1" sl="54" sc="13" el="54" ec="86" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="2" uspid="4463" ordinal="2" offset="11" sl="55" sc="9" el="55" ec="10" bec="0" bev="0" fileid="5" />
               </SequencePoints>
               <BranchPoints />
-              <MethodPoint xsi:type="SequencePoint" vc="2" uspid="4461" ordinal="0" offset="0" sl="54" sc="9" el="54" ec="10" bec="0" bev="0" fileid="5" />
+              <MethodPoint xsi:type="SequencePoint" vc="2" uspid="4461" ordinal="0" offset="0" sl="53" sc="9" el="53" ec="10" bec="0" bev="0" fileid="5" />
             </Method>
             <Method visited="true" cyclomaticComplexity="1" sequenceCoverage="0" branchCoverage="0" isConstructor="true" isStatic="false" isGetter="false" isSetter="false">
               <Summary numSequencePoints="0" visitedSequencePoints="0" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="0" branchCoverage="0" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="0" numMethods="0" />
@@ -39016,7 +39016,7 @@
         </Class>
       </Classes>
     </Module>
-    <Module hash="DB-B8-5F-DD-96-0F-9F-3C-5C-B1-83-B1-DF-3F-CD-D0-75-8B-B7-DF">
+    <Module hash="68-83-67-BD-C9-30-0C-EB-52-75-31-C2-4A-F3-A8-B7-24-4E-94-03">
       <Summary numSequencePoints="76" visitedSequencePoints="76" numBranchPoints="26" visitedBranchPoints="26" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="7" numClasses="7" visitedMethods="26" numMethods="26" />
       <FullName>E:\TeamCity\buildAgent\work\30236e2a569e6bdd\OldMacDonald.Tests\bin\Debug\OldMacDonald.Domain.dll</FullName>
       <ModuleName>OldMacDonald.Domain</ModuleName>
