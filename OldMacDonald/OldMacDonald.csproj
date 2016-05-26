@@ -60,9 +60,9 @@
       <Project>{67ab08fb-1055-4c2b-991a-a8b7c919fbf7}</Project>
       <Name>OldMacDonald.BL</Name>
     </ProjectReference>
-    <ProjectReference Include="..\OldMacDonald.Domain\OldMacDonald.Core.csproj">
+    <ProjectReference Include="..\OldMacDonald.Domain\OldMacDonald.Domain.csproj">
       <Project>{75ca9c68-d482-44a1-89b5-b723090ece3b}</Project>
-      <Name>OldMacDonald.Core</Name>
+      <Name>OldMacDonald.Domain</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

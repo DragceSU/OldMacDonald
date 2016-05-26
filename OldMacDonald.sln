@@ -5,7 +5,7 @@ VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OldMacDonald", "OldMacDonald\OldMacDonald.csproj", "{3C58B705-0D24-487E-96D8-165E1D55D49B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OldMacDonald.Core", "OldMacDonald.Domain\OldMacDonald.Core.csproj", "{75CA9C68-D482-44A1-89B5-B723090ECE3B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OldMacDonald.Domain", "OldMacDonald.Domain\OldMacDonald.Domain.csproj", "{75CA9C68-D482-44A1-89B5-B723090ECE3B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OldMacDonald.BL", "OldMacDonald.BL\OldMacDonald.BL.csproj", "{67AB08FB-1055-4C2B-991A-A8B7C919FBF7}"
 EndProject
@@ -13,7 +13,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ConsoleApp", "ConsoleApp", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BL", "BL", "{A23FA49F-CCF0-42BA-A361-EB84BFC543C6}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{99E89120-C40B-42A3-8AC1-FD9B5AF20C8A}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{99E89120-C40B-42A3-8AC1-FD9B5AF20C8A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Container", "Container", "{73A9D97C-77CD-4F11-9163-DB705DA204D8}"
 EndProject

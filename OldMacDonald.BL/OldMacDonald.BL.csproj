@@ -44,9 +44,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\OldMacDonald.Domain\OldMacDonald.Core.csproj">
+    <ProjectReference Include="..\OldMacDonald.Domain\OldMacDonald.Domain.csproj">
       <Project>{75ca9c68-d482-44a1-89b5-b723090ece3b}</Project>
-      <Name>OldMacDonald.Core</Name>
+      <Name>OldMacDonald.Domain</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />
