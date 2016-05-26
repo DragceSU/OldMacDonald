@@ -14,11 +14,6 @@ namespace OldMacDonald.BL
     {
         public string GetAnimals()
         {
-            return WriteAllAnimalstToScreen();
-        }
-
-        private static string WriteAllAnimalstToScreen()
-        {
             var initinitializeAnimalCounter = 0;
             StringBuilder textToBeReturned = new StringBuilder();
             while (true)

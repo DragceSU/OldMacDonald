@@ -33,7 +33,7 @@ namespace OldMacDonald.Domain
 
         protected abstract string GetAnimalNameAndSound();
 
-        protected static string GetAnimalNameAndSound(string animal, string sound)
+        public static string GetAnimalNameAndSound(string animal, string sound)
         {
             return Verse.GetDefaultVerse().Replace("@newLine", Environment.NewLine)
                 .Replace("@animal", animal)

@@ -1,11 +1,13 @@
 ﻿#region
 
 using System;
+using System.IO;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using OldMacDonald.BL;
 using OldMacDonald.BL.Interfaces;
 using OldMacDonald.Domain;
+using OldMacDonald.Domain.Animals;
 
 #endregion
 
@@ -23,6 +25,7 @@ namespace OldMacDonald.Tests.BL
         private string _animalName;
         private string _animalSound;
         private Mock<IAnimalManager<AnimalBase>> _originalVerseMOQ;
+        private AnimalManager<AnimalBase> animalManager;
 
         private void InitializeUnitTests()
         {
@@ -59,6 +62,30 @@ namespace OldMacDonald.Tests.BL
                 .Replace("@sound", _animalSound);
 
             Assert.AreEqual(managedVerse, getAnimalFromBase);
+        }
+
+        [TestMethod]
+        public void GetAllAnimalsFixture()
+        {
+            animalManager = new AnimalManager<AnimalBase>();
+
+            string getAllAnimals = animalManager.GetAnimals();
+
+            Assert.IsTrue(getAllAnimals.Contains(new Cat().GetGetAnimalNameAndSound()));
+            Assert.IsTrue(getAllAnimals.Contains(new Dog().GetGetAnimalNameAndSound()));
+            Assert.IsTrue(getAllAnimals.Contains(new Cow().GetGetAnimalNameAndSound()));
+            Assert.IsTrue(getAllAnimals.Contains(new Duck().GetGetAnimalNameAndSound()));
+            Assert.IsTrue(getAllAnimals.Contains(new Pig().GetGetAnimalNameAndSound()));
+        }
+
+        [TestMethod]
+        public void DoesNotTigerlAnimalsFixture()
+        {
+            AnimalManager<AnimalBase> animalManager = new AnimalManager<AnimalBase>();
+
+            string getallAnimals = animalManager.GetAnimals();
+
+            Assert.IsFalse(getallAnimals.Contains("tiger"));
         }
     }
 }
