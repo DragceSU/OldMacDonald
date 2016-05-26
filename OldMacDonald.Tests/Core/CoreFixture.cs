@@ -35,6 +35,36 @@ namespace OldMacDonald.Tests.Core
         }
 
         [TestMethod]
+        public void AssertCowObjectConstuctionFixture()
+        {
+            _cow = new Cow();
+
+            Assert.AreEqual(AnimalType.Cow, _cow.Type);
+            Assert.AreEqual("cow", _cow.AnimalName);
+            Assert.AreEqual("moo", _cow.AnimalSound);
+        }
+
+        [TestMethod]
+        public void AssertDuckObjectConstuctionFixture()
+        {
+            _duck = new Duck();
+
+            Assert.AreEqual(AnimalType.Duck, _duck.Type);
+            Assert.AreEqual("duck", _duck.AnimalName);
+            Assert.AreEqual("quack", _duck.AnimalSound);
+        }
+
+        [TestMethod]
+        public void AssertPigObjectConstuctionFixture()
+        {
+            _pig = new Pig();
+
+            Assert.AreEqual(AnimalType.Pig, _pig.Type);
+            Assert.AreEqual("pig", _pig.AnimalName);
+            Assert.AreEqual("oink", _pig.AnimalSound);
+        }
+
+        [TestMethod]
         public void AllAnimalsAreDifferentFixture()
         {
             _dog = new Dog();
