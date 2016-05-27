@@ -5,6 +5,8 @@ using OldMacDonald.Domain.Animals;
 
 namespace OldMacDonald.Tests.Core
 {
+    using OldMacDonald.BL;
+
     [TestClass]
     public class DomainFixture
     {
@@ -13,7 +15,9 @@ namespace OldMacDonald.Tests.Core
         private Pig _pig;
         private Cow _cow;
         private Duck _duck;
-        
+
+        private AnimalManager<AnimalBase> animalManager;
+
         [TestMethod]
         public void AssertCatObjectConstuctionFixture()
         {
@@ -38,10 +42,12 @@ namespace OldMacDonald.Tests.Core
         public void AssertCowObjectConstuctionFixture()
         {
             _cow = new Cow();
+            animalManager = new AnimalManager<AnimalBase>();
 
             Assert.AreEqual(AnimalType.Cow, _cow.Type);
             Assert.AreEqual("cow", _cow.AnimalName);
             Assert.AreEqual("moo", _cow.AnimalSound);
+            Assert.IsTrue(animalManager.GetAnimals().Contains(_cow.GetGetAnimalNameAndSound()));
         }
 
         [TestMethod]

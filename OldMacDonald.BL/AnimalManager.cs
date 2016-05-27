@@ -14,16 +14,16 @@ namespace OldMacDonald.BL
     {
         public string GetAnimals()
         {
-            var initinitializeAnimalCounter = 0;
+            var initializeAnimalCounter = 0;
             var textToBeReturned = new StringBuilder();
             while (true)
             {
                 AnimalType type;
-                if (!Enum.TryParse(initinitializeAnimalCounter.ToString(), false, out type)) continue;
+                if (!Enum.TryParse(initializeAnimalCounter.ToString(), false, out type)) continue;
                 if (Enum.IsDefined(typeof(AnimalType), type))
                 {
                     textToBeReturned.Append(InitializeAnimal(type).GetGetAnimalNameAndSound());
-                    initinitializeAnimalCounter++;
+                    initializeAnimalCounter++;
                 }
                 else
                     break;
