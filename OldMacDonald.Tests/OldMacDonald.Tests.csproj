@@ -57,7 +57,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="BL\AnimalManagerFixture.cs" />
-    <Compile Include="Core\CoreFixture.cs" />
+    <Compile Include="Domain\DomainFixture.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\OldMacDonald.BL\OldMacDonald.BL.csproj">
