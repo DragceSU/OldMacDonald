@@ -36,17 +36,17 @@ namespace OldMacDonald.BL
             T animalObject = null;
             switch (type)
             {
+                case AnimalType.Cow:
+                    animalObject = new Cow() as T;
+                    break;
                 case AnimalType.Dog:
                     animalObject = new Dog() as T;
-                    break;
-                case AnimalType.Pig:
-                    animalObject = new Pig() as T;
                     break;
                 case AnimalType.Cat:
                     animalObject = new Cat() as T;
                     break;
-                case AnimalType.Cow:
-                    animalObject = new Cow() as T;
+                case AnimalType.Pig:
+                    animalObject = new Pig() as T;
                     break;
                 case AnimalType.Duck:
                     animalObject = new Duck() as T;
