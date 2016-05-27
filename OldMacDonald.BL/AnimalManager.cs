@@ -52,6 +52,7 @@ namespace OldMacDonald.BL
                     animalObject = new Duck() as T;
                     break;
             }
+
             return animalObject;
         }
 

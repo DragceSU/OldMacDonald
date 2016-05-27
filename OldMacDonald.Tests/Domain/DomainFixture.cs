@@ -13,7 +13,7 @@ namespace OldMacDonald.Tests.Core
         private Pig _pig;
         private Cow _cow;
         private Duck _duck;
-
+        
         [TestMethod]
         public void AssertCatObjectConstuctionFixture()
         {
