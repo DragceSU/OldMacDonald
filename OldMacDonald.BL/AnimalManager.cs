@@ -20,7 +20,7 @@ namespace OldMacDonald.BL
             {
                 AnimalType type;
                 if (!Enum.TryParse(initializeAnimalCounter.ToString(), false, out type)) continue;
-                if (Enum.IsDefined(typeof(AnimalType), type))
+                if (Enum.IsDefined(typeof (AnimalType), type))
                 {
                     textToBeReturned.Append(InitializeAnimal(type).GetGetAnimalNameAndSound());
                     initializeAnimalCounter++;
