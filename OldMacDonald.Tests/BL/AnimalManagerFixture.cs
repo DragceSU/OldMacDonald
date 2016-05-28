@@ -4,16 +4,18 @@ using System;
 using System.IO;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
+using NUnit.Framework;
 using OldMacDonald.BL;
 using OldMacDonald.BL.Interfaces;
 using OldMacDonald.Domain;
 using OldMacDonald.Domain.Animals;
+using Assert = Microsoft.VisualStudio.TestTools.UnitTesting.Assert;
 
 #endregion
 
 namespace OldMacDonald.Tests.BL
 {
-    [TestClass]
+    [TestFixture]
     public class AnimalManagerFixture
     {
         private readonly string _originalVerse = "Old MacDonald had a farm, E I E I O,@newLine" +
@@ -34,7 +36,7 @@ namespace OldMacDonald.Tests.BL
             _originalVerseMOQ = new Mock<IAnimalManager<AnimalBase>>();
         }
 
-        [TestMethod]
+        [Test]
         public void GetAnimalsIsCorrectFixture()
         {
             InitializeUnitTests();
@@ -50,7 +52,7 @@ namespace OldMacDonald.Tests.BL
             Assert.AreEqual(animal, getAnimalFromBase);
         }
 
-        [TestMethod]
+        [Test]
         public void InitializeCustomAnimalFixture()
         {
             string managedVerse = _originalVerse.Replace("@newLine", Environment.NewLine)
@@ -64,7 +66,7 @@ namespace OldMacDonald.Tests.BL
             Assert.AreEqual(managedVerse, getAnimalFromBase);
         }
 
-        [TestMethod]
+        [Test]
         public void GetAllAnimalsFixture()
         {
             animalManager = new AnimalManager<AnimalBase>();
@@ -78,7 +80,7 @@ namespace OldMacDonald.Tests.BL
             Assert.IsTrue(getAllAnimals.Contains(new Pig().GetGetAnimalNameAndSound()));
         }
 
-        [TestMethod]
+        [Test]
         public void DoesNotTigerlAnimalsFixture()
         {
             AnimalManager<AnimalBase> animalManager = new AnimalManager<AnimalBase>();

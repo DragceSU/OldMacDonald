@@ -1,11 +1,13 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 using OldMacDonald.Domain;
 using OldMacDonald.Domain.Animals;
+using Assert = Microsoft.VisualStudio.TestTools.UnitTesting.Assert;
 
 namespace OldMacDonald.Tests.Core
 {
-    [TestClass]
+    [TestFixture]
     public class CoreFixture
     {
         private Cat _cat;
@@ -14,7 +16,7 @@ namespace OldMacDonald.Tests.Core
         private Cow _cow;
         private Duck _duck;
 
-        [TestMethod]
+        [Test]
         public void AssertCatObjectConstuctionFixture()
         {
             _cat = new Cat();
@@ -24,7 +26,7 @@ namespace OldMacDonald.Tests.Core
             Assert.AreEqual("meow", _cat.AnimalSound);
         }
 
-        [TestMethod]
+        [Test]
         public void AssertDogObjectConstuctionFixture()
         {
             _dog = new Dog();
@@ -34,7 +36,7 @@ namespace OldMacDonald.Tests.Core
             Assert.AreEqual("woof", _dog.AnimalSound);
         }
 
-        [TestMethod]
+        [Test]
         public void AssertCowObjectConstuctionFixture()
         {
             _cow = new Cow();
@@ -44,7 +46,7 @@ namespace OldMacDonald.Tests.Core
             Assert.AreEqual("moo", _cow.AnimalSound);
         }
 
-        [TestMethod]
+        [Test]
         public void AssertDuckObjectConstuctionFixture()
         {
             _duck = new Duck();
@@ -54,7 +56,7 @@ namespace OldMacDonald.Tests.Core
             Assert.AreEqual("quack", _duck.AnimalSound);
         }
 
-        [TestMethod]
+        [Test]
         public void AssertPigObjectConstuctionFixture()
         {
             _pig = new Pig();
@@ -64,7 +66,7 @@ namespace OldMacDonald.Tests.Core
             Assert.AreEqual("oink", _pig.AnimalSound);
         }
 
-        [TestMethod]
+        [Test]
         public void AllAnimalsAreDifferentFixture()
         {
             _dog = new Dog();
