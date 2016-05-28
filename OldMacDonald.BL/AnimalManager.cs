@@ -14,16 +14,16 @@ namespace OldMacDonald.BL
     {
         public string GetAnimals()
         {
-            var initinitializeAnimalCounter = 0;
+            var initializeAnimalCounter = 0;
             var textToBeReturned = new StringBuilder();
             while (true)
             {
                 AnimalType type;
-                if (!Enum.TryParse(initinitializeAnimalCounter.ToString(), false, out type)) continue;
+                if (!Enum.TryParse(initializeAnimalCounter.ToString(), false, out type)) continue;
                 if (Enum.IsDefined(typeof(AnimalType), type))
                 {
                     textToBeReturned.Append(InitializeAnimal(type).GetGetAnimalNameAndSound());
-                    initinitializeAnimalCounter++;
+                    initializeAnimalCounter++;
                 }
                 else
                     break;
@@ -33,20 +33,27 @@ namespace OldMacDonald.BL
 
         private static T InitializeAnimal(AnimalType type)
         {
+            T animalObject = null;
             switch (type)
             {
-                case AnimalType.Dog:
-                    return new Dog() as T;
-                case AnimalType.Pig:
-                    return new Pig() as T;
-                case AnimalType.Cat:
-                    return new Cat() as T;
                 case AnimalType.Cow:
-                    return new Cow() as T;
+                    animalObject = new Cow() as T;
+                    break;
+                case AnimalType.Dog:
+                    animalObject = new Dog() as T;
+                    break;
+                case AnimalType.Cat:
+                    animalObject = new Cat() as T;
+                    break;
+                case AnimalType.Pig:
+                    animalObject = new Pig() as T;
+                    break;
                 case AnimalType.Duck:
-                    return new Duck() as T;
+                    animalObject = new Duck() as T;
+                    break;
             }
-            return null;
+
+            return animalObject;
         }
 
         public static string InitializeCustomAnimal(string animalName, string animalSound)

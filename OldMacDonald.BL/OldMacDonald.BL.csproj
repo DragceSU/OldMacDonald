@@ -41,7 +41,6 @@
   <ItemGroup>
     <Compile Include="AnimalManager.cs" />
     <Compile Include="Interfaces\IAnimalManager.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\OldMacDonald.Domain\OldMacDonald.Domain.csproj">
@@ -49,7 +48,9 @@
       <Name>OldMacDonald.Domain</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
