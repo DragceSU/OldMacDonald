@@ -8,9 +8,9 @@ namespace OldMacDonald.Domain.Animals
 {
     public class Cat : AnimalBase
     {
-        public override AnimalType Type
+        public override AnimalTypeEnum Type
         {
-            get { return AnimalType.Cat; }
+            get { return AnimalTypeEnum.Cat; }
         }
 
         public override string AnimalName

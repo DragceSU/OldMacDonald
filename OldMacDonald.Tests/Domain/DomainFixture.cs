@@ -24,7 +24,7 @@ namespace OldMacDonald.Tests.MSTests
         {
             _cat = new Cat();
 
-            Assert.AreEqual(AnimalType.Cat, _cat.Type);
+            Assert.AreEqual(AnimalTypeEnum.Cat, _cat.Type);
             Assert.AreEqual("cat", _cat.AnimalName);
             Assert.AreEqual("meow", _cat.AnimalSound);
         }
@@ -34,7 +34,7 @@ namespace OldMacDonald.Tests.MSTests
         {
             _dog = new Dog();
 
-            Assert.AreEqual(AnimalType.Dog, _dog.Type);
+            Assert.AreEqual(AnimalTypeEnum.Dog, _dog.Type);
             Assert.AreEqual("dog", _dog.AnimalName);
             Assert.AreEqual("woof", _dog.AnimalSound);
         }
@@ -45,7 +45,7 @@ namespace OldMacDonald.Tests.MSTests
             _cow = new Cow();
             animalManager = new AnimalManager<AnimalBase>();
 
-            Assert.AreEqual(AnimalType.Cow, _cow.Type);
+            Assert.AreEqual(AnimalTypeEnum.Cow, _cow.Type);
             Assert.AreEqual("cow", _cow.AnimalName);
             Assert.AreEqual("moo", _cow.AnimalSound);
             Assert.IsTrue(animalManager.GetAnimals().Contains(_cow.GetGetAnimalNameAndSound()));
@@ -56,7 +56,7 @@ namespace OldMacDonald.Tests.MSTests
         {
             _duck = new Duck();
 
-            Assert.AreEqual(AnimalType.Duck, _duck.Type);
+            Assert.AreEqual(AnimalTypeEnum.Duck, _duck.Type);
             Assert.AreEqual("duck", _duck.AnimalName);
             Assert.AreEqual("quack", _duck.AnimalSound);
         }
@@ -66,7 +66,7 @@ namespace OldMacDonald.Tests.MSTests
         {
             _pig = new Pig();
 
-            Assert.AreEqual(AnimalType.Pig, _pig.Type);
+            Assert.AreEqual(AnimalTypeEnum.Pig, _pig.Type);
             Assert.AreEqual("pig", _pig.AnimalName);
             Assert.AreEqual("oink", _pig.AnimalSound);
         }

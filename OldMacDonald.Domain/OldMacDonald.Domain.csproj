@@ -45,7 +45,7 @@
     <Compile Include="Animals\Dog.cs" />
     <Compile Include="Animals\Duck.cs" />
     <Compile Include="Animals\Pig.cs" />
-    <Compile Include="AnimalType.cs" />
+    <Compile Include="AnimalTypeEnum.cs" />
     <Compile Include="Interfaces\IAnimal.cs" />
     <Compile Include="Verse.cs" />
   </ItemGroup>

@@ -2,7 +2,7 @@
 {
     public interface IAnimal
     {
-        AnimalType Type { get; }
+        AnimalTypeEnum Type { get; }
         string GetGetAnimalNameAndSound();
     }
 }

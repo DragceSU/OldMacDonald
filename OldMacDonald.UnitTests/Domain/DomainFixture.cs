@@ -31,7 +31,7 @@ namespace OldMacDonald.NUnitTests.Domain
         {
             _cat = new Cat();
 
-            Assert.That(AnimalType.Cat, Is.EqualTo(_cat.Type));
+            Assert.That(AnimalTypeEnum.Cat, Is.EqualTo(_cat.Type));
             Assert.That("cat", Is.EqualTo(_cat.AnimalName));
             Assert.That("meow", Is.EqualTo(_cat.AnimalSound));
         }
@@ -41,7 +41,7 @@ namespace OldMacDonald.NUnitTests.Domain
         {
             _dog = new Dog();
 
-            Assert.That(AnimalType.Dog, Is.EqualTo(_dog.Type));
+            Assert.That(AnimalTypeEnum.Dog, Is.EqualTo(_dog.Type));
             Assert.That("dog", Is.EqualTo(_dog.AnimalName));
             Assert.That("woof", Is.EqualTo(_dog.AnimalSound));
         }
@@ -52,7 +52,7 @@ namespace OldMacDonald.NUnitTests.Domain
             _cow = new Cow();
             animalManager = new AnimalManager<AnimalBase>();
 
-            Assert.That(AnimalType.Cow, Is.EqualTo(_cow.Type));
+            Assert.That(AnimalTypeEnum.Cow, Is.EqualTo(_cow.Type));
             Assert.That("cow", Is.EqualTo(_cow.AnimalName));
             Assert.That("moo", Is.EqualTo(_cow.AnimalSound));
             Assert.That(animalManager.GetAnimals(), Contains.Substring(_cow.GetGetAnimalNameAndSound()));
@@ -63,7 +63,7 @@ namespace OldMacDonald.NUnitTests.Domain
         {
             _duck = new Duck();
 
-            Assert.That(AnimalType.Duck, Is.EqualTo(_duck.Type));
+            Assert.That(AnimalTypeEnum.Duck, Is.EqualTo(_duck.Type));
             Assert.That("duck", Is.EqualTo(_duck.AnimalName));
             Assert.That("quack", Is.EqualTo(_duck.AnimalSound));
         }
@@ -73,27 +73,27 @@ namespace OldMacDonald.NUnitTests.Domain
         {
             _pig = new Pig();
 
-            Assert.That(AnimalType.Pig, Is.EqualTo(_pig.Type));
+            Assert.That(AnimalTypeEnum.Pig, Is.EqualTo(_pig.Type));
             Assert.That("pig", Is.EqualTo(_pig.AnimalName));
             Assert.That("oink", Is.EqualTo(_pig.AnimalSound));
         }
 
         [Test]
         public void CheckIfAllAnimalsAreDifferentFromEachOther(
-            [Values(AnimalType.Cat, AnimalType.Cow, AnimalType.Dog, AnimalType.Duck, AnimalType.Pig)]AnimalType firstAnimal,
-            [Values(AnimalType.Cat, AnimalType.Cow, AnimalType.Dog, AnimalType.Duck, AnimalType.Pig)]AnimalType secondAnimal)
+            [Values(AnimalTypeEnum.Cat, AnimalTypeEnum.Cow, AnimalTypeEnum.Dog, AnimalTypeEnum.Duck, AnimalTypeEnum.Pig)]AnimalTypeEnum firstAnimalTypeEnumAnimal,
+            [Values(AnimalTypeEnum.Cat, AnimalTypeEnum.Cow, AnimalTypeEnum.Dog, AnimalTypeEnum.Duck, AnimalTypeEnum.Pig)]AnimalTypeEnum secondAnimalTypeEnumAnimal)
         {
-            if (firstAnimal == secondAnimal)
-                Assert.That(firstAnimal, Is.EqualTo(secondAnimal));
+            if (firstAnimalTypeEnumAnimal == secondAnimalTypeEnumAnimal)
+                Assert.That(firstAnimalTypeEnumAnimal, Is.EqualTo(secondAnimalTypeEnumAnimal));
             else
             {
-                Assert.That(firstAnimal, Is.Not.EqualTo(secondAnimal));
-                Assert.That(AnimalBase.AnimalFactory(firstAnimal).AnimalName,
-                    Is.Not.EqualTo(AnimalBase.AnimalFactory(secondAnimal).AnimalName));
-                Assert.That(AnimalBase.AnimalFactory(firstAnimal).AnimalSound,
-                    Is.Not.EqualTo(AnimalBase.AnimalFactory(secondAnimal).AnimalSound));
-                Assert.That(AnimalBase.AnimalFactory(firstAnimal).GetGetAnimalNameAndSound(),
-                    Is.Not.EqualTo(AnimalBase.AnimalFactory(secondAnimal).GetGetAnimalNameAndSound()));
+                Assert.That(firstAnimalTypeEnumAnimal, Is.Not.EqualTo(secondAnimalTypeEnumAnimal));
+                Assert.That(AnimalBase.AnimalFactory(firstAnimalTypeEnumAnimal).AnimalName,
+                    Is.Not.EqualTo(AnimalBase.AnimalFactory(secondAnimalTypeEnumAnimal).AnimalName));
+                Assert.That(AnimalBase.AnimalFactory(firstAnimalTypeEnumAnimal).AnimalSound,
+                    Is.Not.EqualTo(AnimalBase.AnimalFactory(secondAnimalTypeEnumAnimal).AnimalSound));
+                Assert.That(AnimalBase.AnimalFactory(firstAnimalTypeEnumAnimal).GetGetAnimalNameAndSound(),
+                    Is.Not.EqualTo(AnimalBase.AnimalFactory(secondAnimalTypeEnumAnimal).GetGetAnimalNameAndSound()));
             }
         }
     }

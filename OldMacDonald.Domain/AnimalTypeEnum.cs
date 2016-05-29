@@ -1,6 +1,6 @@
 ﻿namespace OldMacDonald.Domain
 {
-    public enum AnimalType
+    public enum AnimalTypeEnum
     {
         Cow = 0,
         Dog,

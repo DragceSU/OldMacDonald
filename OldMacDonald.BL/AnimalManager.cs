@@ -18,9 +18,9 @@ namespace OldMacDonald.BL
             var textToBeReturned = new StringBuilder();
             while (true)
             {
-                AnimalType type;
+                AnimalTypeEnum type;
                 if (!Enum.TryParse(initializeAnimalCounter.ToString(), false, out type)) continue;
-                if (Enum.IsDefined(typeof(AnimalType), type))
+                if (Enum.IsDefined(typeof(AnimalTypeEnum), type))
                 {
                     textToBeReturned.Append(InitializeAnimal(type).GetGetAnimalNameAndSound());
                     initializeAnimalCounter++;
@@ -31,24 +31,24 @@ namespace OldMacDonald.BL
             return textToBeReturned.ToString();
         }
 
-        private static T InitializeAnimal(AnimalType type)
+        private static T InitializeAnimal(AnimalTypeEnum type)
         {
             T animalObject = null;
             switch (type)
             {
-                case AnimalType.Cow:
+                case AnimalTypeEnum.Cow:
                     animalObject = AnimalBase.AnimalFactory(type) as T;
                     break;
-                case AnimalType.Dog:
+                case AnimalTypeEnum.Dog:
                     animalObject = AnimalBase.AnimalFactory(type) as T;
                     break;
-                case AnimalType.Cat:
+                case AnimalTypeEnum.Cat:
                     animalObject = AnimalBase.AnimalFactory(type) as T;
                     break;
-                case AnimalType.Pig:
+                case AnimalTypeEnum.Pig:
                     animalObject = AnimalBase.AnimalFactory(type) as T;
                     break;
-                case AnimalType.Duck:
+                case AnimalTypeEnum.Duck:
                     animalObject = AnimalBase.AnimalFactory(type) as T;
                     break;
             }

@@ -21,29 +21,26 @@ namespace OldMacDonald.Domain
             get { return this; }
         }
 
-        public static AnimalBase AnimalFactory(AnimalType animalType)
+        public static AnimalBase AnimalFactory(AnimalTypeEnum animalTypeEnum)
         {
-            AnimalBase createAnimal;
+            AnimalBase createAnimal = null;
 
-            switch (animalType)
+            switch (animalTypeEnum)
             {
-                case AnimalType.Cat:
+                case AnimalTypeEnum.Cat:
                     createAnimal = new Cat();
                     break;
-                case AnimalType.Cow:
+                case AnimalTypeEnum.Cow:
                     createAnimal = new Cow();
                     break;
-                case AnimalType.Dog:
+                case AnimalTypeEnum.Dog:
                     createAnimal = new Dog();
                     break;
-                case AnimalType.Duck:
+                case AnimalTypeEnum.Duck:
                     createAnimal = new Duck();
                     break;
-                case AnimalType.Pig:
+                case AnimalTypeEnum.Pig:
                     createAnimal = new Pig();
-                    break;
-                default:
-                    createAnimal = null;
                     break;
             }
 
@@ -52,7 +49,7 @@ namespace OldMacDonald.Domain
 
         public abstract string AnimalName { get; }
         public abstract string AnimalSound { get; }
-        public abstract AnimalType Type { get; }
+        public abstract AnimalTypeEnum Type { get; }
 
         public string GetGetAnimalNameAndSound()
         {

@@ -75,21 +75,6 @@ namespace OldMacDonald.NUnitTests.BL
         }
 
         [Test]
-        [Ignore]
-        public void ShouldGetAllAnimals()
-        {
-            animalManager = new AnimalManager<AnimalBase>();
-
-            string getAllAnimals = animalManager.GetAnimals();
-
-            Assert.That(getAllAnimals, Contains.Substring(new Cat().GetGetAnimalNameAndSound()));
-            Assert.That(getAllAnimals, Contains.Substring((new Dog().GetGetAnimalNameAndSound())));
-            Assert.That(getAllAnimals, Contains.Substring((new Cow().GetGetAnimalNameAndSound())));
-            Assert.That(getAllAnimals, Contains.Substring((new Duck().GetGetAnimalNameAndSound())));
-            Assert.That(getAllAnimals, Contains.Substring((new Pig().GetGetAnimalNameAndSound())));
-        }
-
-        [Test]
         public void TigerShouldNotBelongToAnimals()
         {
             AnimalManager<AnimalBase> animalManager = new AnimalManager<AnimalBase>();
