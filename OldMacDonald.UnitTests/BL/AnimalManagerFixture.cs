@@ -46,7 +46,7 @@ namespace OldMacDonald.NUnitTests.BL
         }
 
         [Test]
-        public void GetAnimalsIsCorrectFixture()
+        public void ShouldGetAnimalsIsCorrectly()
         {
             _originalVerseMOQ.Setup(manager => manager.GetAnimals()).Returns(_originalVerse);
             string animal = _originalVerseMOQ.Object.GetAnimals().Replace("@newLine", Environment.NewLine)
@@ -61,7 +61,7 @@ namespace OldMacDonald.NUnitTests.BL
         }
 
         [Test]
-        public void InitializeCustomAnimalFixture()
+        public void ShouldGetAnimalsFromInitializeCustomAnimalMethod()
         {
             string managedVerse = _originalVerse.Replace("@newLine", Environment.NewLine)
                 .Replace("@animal", _animalName)
@@ -75,7 +75,8 @@ namespace OldMacDonald.NUnitTests.BL
         }
 
         [Test]
-        public void GetAllAnimalsFixture()
+        [Ignore]
+        public void ShouldGetAllAnimals()
         {
             animalManager = new AnimalManager<AnimalBase>();
 
@@ -89,7 +90,7 @@ namespace OldMacDonald.NUnitTests.BL
         }
 
         [Test]
-        public void DoesNotTigerlAnimalsFixture()
+        public void TigerShouldNotBelongToAnimals()
         {
             AnimalManager<AnimalBase> animalManager = new AnimalManager<AnimalBase>();
 
