@@ -7,4 +7,3 @@ E:\GitHub\OldMacDonald\OldMacDonald.Domain\bin\Debug\OldMacDonald.Domain.dll
 E:\GitHub\OldMacDonald\OldMacDonald.Domain\bin\Debug\OldMacDonald.Domain.pdb
 E:\GitHub\OldMacDonald\OldMacDonald.Domain\obj\Debug\OldMacDonald.Domain.dll
 E:\GitHub\OldMacDonald\OldMacDonald.Domain\obj\Debug\OldMacDonald.Domain.pdb
-E:\GitHub\OldMacDonald\OldMacDonald.Domain\obj\Debug\OldMacDonald.Domain.csprojResolveAssemblyReference.cache
