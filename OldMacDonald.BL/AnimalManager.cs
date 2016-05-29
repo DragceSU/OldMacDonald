@@ -15,8 +15,8 @@
     {
         public string GetAnimals()
         {
-            var initializeAnimalCounter = 0;
-            var textToBeReturned = new StringBuilder();
+            int initializeAnimalCounter = 0;
+            StringBuilder textToBeReturned = new StringBuilder();
 
             while (true)
             {

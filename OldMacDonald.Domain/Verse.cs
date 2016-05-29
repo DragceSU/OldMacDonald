@@ -1,4 +1,11 @@
-﻿namespace OldMacDonald.Domain
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="Verse.cs" company="">
+// </copyright>
+// <summary>
+//   The verse.
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+namespace OldMacDonald.Domain
 {
     #region
 
@@ -6,8 +13,17 @@
 
     #endregion
 
+    /// <summary>
+    /// The verse.
+    /// </summary>
     public static class Verse
     {
+        /// <summary>
+        /// The get default verse.
+        /// </summary>
+        /// <returns>
+        /// The <see cref="StringBuilder"/>.
+        /// </returns>
         public static StringBuilder GetDefaultVerse()
         {
             return

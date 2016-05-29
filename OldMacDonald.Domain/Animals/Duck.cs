@@ -1,4 +1,11 @@
-﻿namespace OldMacDonald.Domain.Animals
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="Duck.cs" company="">
+// </copyright>
+// <summary>
+//   The duck.
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+namespace OldMacDonald.Domain.Animals
 {
     #region
 
@@ -6,8 +13,14 @@
 
     #endregion
 
+    /// <summary>
+    /// The duck.
+    /// </summary>
     public class Duck : AnimalBase
     {
+        /// <summary>
+        /// Gets the type.
+        /// </summary>
         public override AnimalTypeEnum Type
         {
             get
@@ -16,6 +29,9 @@
             }
         }
 
+        /// <summary>
+        /// Gets the animal name.
+        /// </summary>
         public override string AnimalName
         {
             get
@@ -24,6 +40,9 @@
             }
         }
 
+        /// <summary>
+        /// Gets the animal sound.
+        /// </summary>
         public override string AnimalSound
         {
             get
@@ -32,6 +51,12 @@
             }
         }
 
+        /// <summary>
+        /// The get animal name and sound.
+        /// </summary>
+        /// <returns>
+        /// The <see cref="string"/>.
+        /// </returns>
         protected override string GetAnimalNameAndSound()
         {
             return

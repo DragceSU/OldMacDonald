@@ -52,13 +52,13 @@
         public void GetAnimalsIsCorrectFixture()
         {
             this._originalVerseMOQ.Setup(manager => manager.GetAnimals()).Returns(this._originalVerse);
-            var animal =
+            string animal =
                 this._originalVerseMOQ.Object.GetAnimals()
                     .Replace("@newLine", Environment.NewLine)
                     .Replace("@animal", this._animalName)
                     .Replace("@sound", this._animalSound);
 
-            var getAnimalFromBase =
+            string getAnimalFromBase =
                 AnimalManager<AnimalBase>.InitializeCustomAnimal(this._animalName, this._animalSound)
                     .Replace("@newLine", Environment.NewLine)
                     .Replace("@animal", this._animalName)
@@ -70,12 +70,12 @@
         [TestMethod]
         public void InitializeCustomAnimalFixture()
         {
-            var managedVerse =
+            string managedVerse =
                 this._originalVerse.Replace("@newLine", Environment.NewLine)
                     .Replace("@animal", this._animalName)
                     .Replace("@sound", this._animalSound);
 
-            var getAnimalFromBase =
+            string getAnimalFromBase =
                 AnimalManager<AnimalBase>.InitializeCustomAnimal(this._animalName, this._animalSound)
                     .Replace("@newLine", Environment.NewLine)
                     .Replace("@animal", this._animalName)
@@ -89,7 +89,7 @@
         {
             this.animalManager = new AnimalManager<AnimalBase>();
 
-            var getAllAnimals = this.animalManager.GetAnimals();
+            string getAllAnimals = this.animalManager.GetAnimals();
 
             Assert.IsTrue(getAllAnimals.Contains(new Cat().GetGetAnimalNameAndSound()));
             Assert.IsTrue(getAllAnimals.Contains(new Dog().GetGetAnimalNameAndSound()));
@@ -101,9 +101,9 @@
         [TestMethod]
         public void DoesNotTigerlAnimalsFixture()
         {
-            var animalManager = new AnimalManager<AnimalBase>();
+            AnimalManager<AnimalBase> animalManager = new AnimalManager<AnimalBase>();
 
-            var getallAnimals = animalManager.GetAnimals();
+            string getallAnimals = animalManager.GetAnimals();
 
             Assert.IsFalse(getallAnimals.Contains("tiger"));
         }

@@ -49,12 +49,12 @@
         [MaxTime(500)]
         public void ShouldGetAnimalsFromInitializeCustomAnimalMethod()
         {
-            var managedVerse =
+            string managedVerse =
                 this._originalVerse.Replace("@newLine", Environment.NewLine)
                     .Replace("@animal", this._animalName)
                     .Replace("@sound", this._animalSound);
 
-            var getAnimalFromBase =
+            string getAnimalFromBase =
                 AnimalManager<AnimalBase>.InitializeCustomAnimal(this._animalName, this._animalSound)
                     .Replace("@newLine", Environment.NewLine)
                     .Replace("@animal", this._animalName)
@@ -68,13 +68,13 @@
         public void ShouldGetAnimalsIsCorrectly()
         {
             this._originalVerseMOQ.Setup(manager => manager.GetAnimals()).Returns(this._originalVerse);
-            var animal =
+            string animal =
                 this._originalVerseMOQ.Object.GetAnimals()
                     .Replace("@newLine", Environment.NewLine)
                     .Replace("@animal", this._animalName)
                     .Replace("@sound", this._animalSound);
 
-            var getAnimalFromBase =
+            string getAnimalFromBase =
                 AnimalManager<AnimalBase>.InitializeCustomAnimal(this._animalName, this._animalSound)
                     .Replace("@newLine", Environment.NewLine)
                     .Replace("@animal", this._animalName)
@@ -87,11 +87,11 @@
         [MaxTime(500)]
         public void TigerShouldNotBelongToAnimals()
         {
-            var animalManager = new AnimalManager<AnimalBase>();
+            AnimalManager<AnimalBase> animalManager = new AnimalManager<AnimalBase>();
 
             this._originalVerseMOQ.Setup(p => p.GetAnimals()).Returns(this._originalVerse);
 
-            var getallAnimals = this._originalVerseMOQ.Object.GetAnimals();
+            string getallAnimals = this._originalVerseMOQ.Object.GetAnimals();
 
             Assert.That(getallAnimals, !Contains.Substring("tiger"));
         }

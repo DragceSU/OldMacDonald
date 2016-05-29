@@ -38,14 +38,14 @@
 
         private static void Main(string[] args)
         {
-            var kernel = new StandardKernel();
+            StandardKernel kernel = new StandardKernel();
             InitializeContainer.Register(kernel);
 
-            var manager = kernel.Get<AnimalManager<AnimalBase>>();
+            AnimalManager<AnimalBase> manager = kernel.Get<AnimalManager<AnimalBase>>();
             Console.WriteLine(manager.GetAnimals());
 
             // Custom animal types in case of user specific definitions
-            foreach (var animal in _newAnimals)
+            foreach (KeyValuePair<string, string> animal in _newAnimals)
             {
                 Console.WriteLine(AnimalManager<AnimalBase>.InitializeCustomAnimal(animal.Key, animal.Value));
             }
