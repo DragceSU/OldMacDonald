@@ -1,10 +1,14 @@
 ﻿namespace OldMacDonald.BL
 {
+    #region
+
     using System;
     using System.Text;
 
     using OldMacDonald.BL.Interfaces;
     using OldMacDonald.Domain;
+
+    #endregion
 
     public class AnimalManager<T> : IAnimalManager<T>
         where T : AnimalBase
@@ -13,17 +17,15 @@
         {
             var initializeAnimalCounter = 0;
             var textToBeReturned = new StringBuilder();
+
             while (true)
             {
                 AnimalTypeEnum type;
-                if (!Enum.TryParse(initializeAnimalCounter.ToString(), false, out type))
-                {
-                    continue;
-                }
-
+                if (!Enum.TryParse(initializeAnimalCounter.ToString(), false, out type)) continue;
                 if (Enum.IsDefined(typeof(AnimalTypeEnum), type))
                 {
                     textToBeReturned.Append(InitializeAnimal(type).GetGetAnimalNameAndSound());
+
                     initializeAnimalCounter++;
                 }
                 else
