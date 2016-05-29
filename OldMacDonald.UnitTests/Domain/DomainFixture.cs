@@ -1,21 +1,14 @@
-﻿using NUnit.Framework;
-using OldMacDonald.BL;
-using OldMacDonald.Domain;
-using OldMacDonald.Domain.Animals;
-
-namespace OldMacDonald.NUnitTests.Domain
+﻿namespace OldMacDonald.NUnitTests.Domain
 {
+    using NUnit.Framework;
+
+    using OldMacDonald.BL;
+    using OldMacDonald.Domain;
+    using OldMacDonald.Domain.Animals;
+
     [TestFixture]
     public class Domain
     {
-        private static Cat _cat;
-        private static Dog _dog;
-        private static Pig _pig;
-        private static Cow _cow;
-        private static Duck _duck;
-
-        private AnimalManager<AnimalBase> animalManager;
-
         [SetUp]
         public void InitializeTests()
         {
@@ -26,7 +19,47 @@ namespace OldMacDonald.NUnitTests.Domain
             _pig = new Pig();
         }
 
+        private static Cat _cat;
+
+        private static Dog _dog;
+
+        private static Pig _pig;
+
+        private static Cow _cow;
+
+        private static Duck _duck;
+
+        private AnimalManager<AnimalBase> animalManager;
+
         [Test]
+        [MaxTime(500)]
+        public void CheckIfAllAnimalsAreDifferentFromEachOther(
+            [Values(AnimalTypeEnum.Cat, AnimalTypeEnum.Cow, AnimalTypeEnum.Dog, AnimalTypeEnum.Duck, AnimalTypeEnum.Pig)
+            ] AnimalTypeEnum firstAnimalTypeEnumAnimal, 
+            [Values(AnimalTypeEnum.Cat, AnimalTypeEnum.Cow, AnimalTypeEnum.Dog, AnimalTypeEnum.Duck, AnimalTypeEnum.Pig)
+            ] AnimalTypeEnum secondAnimalTypeEnumAnimal)
+        {
+            if (firstAnimalTypeEnumAnimal == secondAnimalTypeEnumAnimal)
+            {
+                Assert.That(firstAnimalTypeEnumAnimal, Is.EqualTo(secondAnimalTypeEnumAnimal));
+            }
+            else
+            {
+                Assert.That(firstAnimalTypeEnumAnimal, Is.Not.EqualTo(secondAnimalTypeEnumAnimal));
+                Assert.That(
+                    AnimalBase.AnimalFactory(firstAnimalTypeEnumAnimal).AnimalName, 
+                    Is.Not.EqualTo(AnimalBase.AnimalFactory(secondAnimalTypeEnumAnimal).AnimalName));
+                Assert.That(
+                    AnimalBase.AnimalFactory(firstAnimalTypeEnumAnimal).AnimalSound, 
+                    Is.Not.EqualTo(AnimalBase.AnimalFactory(secondAnimalTypeEnumAnimal).AnimalSound));
+                Assert.That(
+                    AnimalBase.AnimalFactory(firstAnimalTypeEnumAnimal).GetGetAnimalNameAndSound(), 
+                    Is.Not.EqualTo(AnimalBase.AnimalFactory(secondAnimalTypeEnumAnimal).GetGetAnimalNameAndSound()));
+            }
+        }
+
+        [Test]
+        [MaxTime(500)]
         public void TestCatObjectConstuction()
         {
             _cat = new Cat();
@@ -37,6 +70,20 @@ namespace OldMacDonald.NUnitTests.Domain
         }
 
         [Test]
+        [MaxTime(500)]
+        public void TestCowObjectConstuction()
+        {
+            _cow = new Cow();
+            this.animalManager = new AnimalManager<AnimalBase>();
+
+            Assert.That(AnimalTypeEnum.Cow, Is.EqualTo(_cow.Type));
+            Assert.That("cow", Is.EqualTo(_cow.AnimalName));
+            Assert.That("moo", Is.EqualTo(_cow.AnimalSound));
+            Assert.That(this.animalManager.GetAnimals(), Contains.Substring(_cow.GetGetAnimalNameAndSound()));
+        }
+
+        [Test]
+        [MaxTime(500)]
         public void TestDogObjectConstuction()
         {
             _dog = new Dog();
@@ -47,18 +94,7 @@ namespace OldMacDonald.NUnitTests.Domain
         }
 
         [Test]
-        public void TestCowObjectConstuction()
-        {
-            _cow = new Cow();
-            animalManager = new AnimalManager<AnimalBase>();
-
-            Assert.That(AnimalTypeEnum.Cow, Is.EqualTo(_cow.Type));
-            Assert.That("cow", Is.EqualTo(_cow.AnimalName));
-            Assert.That("moo", Is.EqualTo(_cow.AnimalSound));
-            Assert.That(animalManager.GetAnimals(), Contains.Substring(_cow.GetGetAnimalNameAndSound()));
-        }
-
-        [Test]
+        [MaxTime(500)]
         public void TestDuckObjectConstuction()
         {
             _duck = new Duck();
@@ -69,6 +105,7 @@ namespace OldMacDonald.NUnitTests.Domain
         }
 
         [Test]
+        [MaxTime(500)]
         public void TestPigObjectConstuction()
         {
             _pig = new Pig();
@@ -76,25 +113,6 @@ namespace OldMacDonald.NUnitTests.Domain
             Assert.That(AnimalTypeEnum.Pig, Is.EqualTo(_pig.Type));
             Assert.That("pig", Is.EqualTo(_pig.AnimalName));
             Assert.That("oink", Is.EqualTo(_pig.AnimalSound));
-        }
-
-        [Test]
-        public void CheckIfAllAnimalsAreDifferentFromEachOther(
-            [Values(AnimalTypeEnum.Cat, AnimalTypeEnum.Cow, AnimalTypeEnum.Dog, AnimalTypeEnum.Duck, AnimalTypeEnum.Pig)]AnimalTypeEnum firstAnimalTypeEnumAnimal,
-            [Values(AnimalTypeEnum.Cat, AnimalTypeEnum.Cow, AnimalTypeEnum.Dog, AnimalTypeEnum.Duck, AnimalTypeEnum.Pig)]AnimalTypeEnum secondAnimalTypeEnumAnimal)
-        {
-            if (firstAnimalTypeEnumAnimal == secondAnimalTypeEnumAnimal)
-                Assert.That(firstAnimalTypeEnumAnimal, Is.EqualTo(secondAnimalTypeEnumAnimal));
-            else
-            {
-                Assert.That(firstAnimalTypeEnumAnimal, Is.Not.EqualTo(secondAnimalTypeEnumAnimal));
-                Assert.That(AnimalBase.AnimalFactory(firstAnimalTypeEnumAnimal).AnimalName,
-                    Is.Not.EqualTo(AnimalBase.AnimalFactory(secondAnimalTypeEnumAnimal).AnimalName));
-                Assert.That(AnimalBase.AnimalFactory(firstAnimalTypeEnumAnimal).AnimalSound,
-                    Is.Not.EqualTo(AnimalBase.AnimalFactory(secondAnimalTypeEnumAnimal).AnimalSound));
-                Assert.That(AnimalBase.AnimalFactory(firstAnimalTypeEnumAnimal).GetGetAnimalNameAndSound(),
-                    Is.Not.EqualTo(AnimalBase.AnimalFactory(secondAnimalTypeEnumAnimal).GetGetAnimalNameAndSound()));
-            }
         }
     }
 }

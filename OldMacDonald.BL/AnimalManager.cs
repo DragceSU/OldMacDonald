@@ -1,16 +1,13 @@
-﻿#region
-
-using System;
-using System.Text;
-using OldMacDonald.BL.Interfaces;
-using OldMacDonald.Domain;
-using OldMacDonald.Domain.Animals;
-
-#endregion
-
-namespace OldMacDonald.BL
+﻿namespace OldMacDonald.BL
 {
-    public class AnimalManager<T> : IAnimalManager<T> where T : AnimalBase
+    using System;
+    using System.Text;
+
+    using OldMacDonald.BL.Interfaces;
+    using OldMacDonald.Domain;
+
+    public class AnimalManager<T> : IAnimalManager<T>
+        where T : AnimalBase
     {
         public string GetAnimals()
         {
@@ -19,15 +16,22 @@ namespace OldMacDonald.BL
             while (true)
             {
                 AnimalTypeEnum type;
-                if (!Enum.TryParse(initializeAnimalCounter.ToString(), false, out type)) continue;
+                if (!Enum.TryParse(initializeAnimalCounter.ToString(), false, out type))
+                {
+                    continue;
+                }
+
                 if (Enum.IsDefined(typeof(AnimalTypeEnum), type))
                 {
                     textToBeReturned.Append(InitializeAnimal(type).GetGetAnimalNameAndSound());
                     initializeAnimalCounter++;
                 }
                 else
+                {
                     break;
+                }
             }
+
             return textToBeReturned.ToString();
         }
 

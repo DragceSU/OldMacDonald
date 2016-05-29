@@ -1,14 +1,11 @@
-﻿#region
-
-using Ninject;
-using OldMacDonald.BL;
-using OldMacDonald.BL.Interfaces;
-using OldMacDonald.Domain;
-
-#endregion
-
-namespace Container
+﻿namespace Container
 {
+    using Ninject;
+
+    using OldMacDonald.BL;
+    using OldMacDonald.BL.Interfaces;
+    using OldMacDonald.Domain;
+
     public class InitializeContainer
     {
         public static void Register(IKernel kernel)

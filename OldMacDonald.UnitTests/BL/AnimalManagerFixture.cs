@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace OldMacDonald.NUnitTests.BL
+﻿namespace OldMacDonald.NUnitTests.BL
 {
+    using System;
+
     using Moq;
 
     using NUnit.Framework;
@@ -13,75 +9,87 @@ namespace OldMacDonald.NUnitTests.BL
     using OldMacDonald.BL;
     using OldMacDonald.BL.Interfaces;
     using OldMacDonald.Domain;
-    using OldMacDonald.Domain.Animals;
 
     [TestFixture]
     public class AnimalManagerFixture
     {
-        private readonly string _originalVerse = "Old MacDonald had a farm, E I E I O,@newLine" +
-                                                 "And on his farm he had a @animal, E I E I O.@newLine" +
-                                                 "With a @sound @sound here and a @sound @sound there,@newLine" +
-                                                 "Here a @sound, there a @sound, ev'rywhere a @sound @sound.@newLine" +
-                                                 "Old MacDonald had a farm, E I E I O.@newLine";
-
-        private string _animalName;
-        private string _animalSound;
-        private Mock<IAnimalManager<AnimalBase>> _originalVerseMOQ;
-        private AnimalManager<AnimalBase> animalManager;
-
         [SetUp]
         public void InitializeUnitTests()
         {
-            _animalName = "cat";
-            _animalSound = "meow";
-            _originalVerseMOQ = new Mock<IAnimalManager<AnimalBase>>();
+            this._animalName = "cat";
+            this._animalSound = "meow";
+            this._originalVerseMOQ = new Mock<IAnimalManager<AnimalBase>>();
         }
 
         [TearDown]
         public void DestructAllObjects()
         {
-            _animalName = null;
-            _animalSound = null;
-            _originalVerseMOQ = null;
+            this._animalName = null;
+            this._animalSound = null;
+            this._originalVerseMOQ = null;
         }
 
+        private readonly string _originalVerse = "Old MacDonald had a farm, E I E I O,@newLine"
+                                                 + "And on his farm he had a @animal, E I E I O.@newLine"
+                                                 + "With a @sound @sound here and a @sound @sound there,@newLine"
+                                                 + "Here a @sound, there a @sound, ev'rywhere a @sound @sound.@newLine"
+                                                 + "Old MacDonald had a farm, E I E I O.@newLine";
+
+        private string _animalName;
+
+        private string _animalSound;
+
+        private Mock<IAnimalManager<AnimalBase>> _originalVerseMOQ;
+
+        private AnimalManager<AnimalBase> animalManager;
+
         [Test]
-        public void ShouldGetAnimalsIsCorrectly()
-        {
-            _originalVerseMOQ.Setup(manager => manager.GetAnimals()).Returns(_originalVerse);
-            string animal = _originalVerseMOQ.Object.GetAnimals().Replace("@newLine", Environment.NewLine)
-                .Replace("@animal", _animalName)
-                .Replace("@sound", _animalSound);
-
-            string getAnimalFromBase = AnimalManager<AnimalBase>.InitializeCustomAnimal(_animalName, _animalSound).Replace("@newLine", Environment.NewLine)
-                .Replace("@animal", _animalName)
-                .Replace("@sound", _animalSound);
-
-            Assert.That(animal, Is.EqualTo(getAnimalFromBase));
-        }
-
-        [Test]
+        [MaxTime(500)]
         public void ShouldGetAnimalsFromInitializeCustomAnimalMethod()
         {
-            string managedVerse = _originalVerse.Replace("@newLine", Environment.NewLine)
-                .Replace("@animal", _animalName)
-                .Replace("@sound", _animalSound);
+            string managedVerse =
+                this._originalVerse.Replace("@newLine", Environment.NewLine)
+                    .Replace("@animal", this._animalName)
+                    .Replace("@sound", this._animalSound);
 
-            string getAnimalFromBase = AnimalManager<AnimalBase>.InitializeCustomAnimal(_animalName, _animalSound).Replace("@newLine", Environment.NewLine)
-                .Replace("@animal", _animalName)
-                .Replace("@sound", _animalSound);
+            string getAnimalFromBase =
+                AnimalManager<AnimalBase>.InitializeCustomAnimal(this._animalName, this._animalSound)
+                    .Replace("@newLine", Environment.NewLine)
+                    .Replace("@animal", this._animalName)
+                    .Replace("@sound", this._animalSound);
 
             Assert.That(managedVerse, Is.EqualTo(getAnimalFromBase));
         }
 
         [Test]
+        [MaxTime(500)]
+        public void ShouldGetAnimalsIsCorrectly()
+        {
+            this._originalVerseMOQ.Setup(manager => manager.GetAnimals()).Returns(this._originalVerse);
+            string animal =
+                this._originalVerseMOQ.Object.GetAnimals()
+                    .Replace("@newLine", Environment.NewLine)
+                    .Replace("@animal", this._animalName)
+                    .Replace("@sound", this._animalSound);
+
+            string getAnimalFromBase =
+                AnimalManager<AnimalBase>.InitializeCustomAnimal(this._animalName, this._animalSound)
+                    .Replace("@newLine", Environment.NewLine)
+                    .Replace("@animal", this._animalName)
+                    .Replace("@sound", this._animalSound);
+
+            Assert.That(animal, Is.EqualTo(getAnimalFromBase));
+        }
+
+        [Test]
+        [MaxTime(500)]
         public void TigerShouldNotBelongToAnimals()
         {
             AnimalManager<AnimalBase> animalManager = new AnimalManager<AnimalBase>();
 
-            _originalVerseMOQ.Setup(p => p.GetAnimals()).Returns(_originalVerse);
+            this._originalVerseMOQ.Setup(p => p.GetAnimals()).Returns(this._originalVerse);
 
-            string getallAnimals = _originalVerseMOQ.Object.GetAnimals();
+            string getallAnimals = this._originalVerseMOQ.Object.GetAnimals();
 
             Assert.That(getallAnimals, !Contains.Substring("tiger"));
         }

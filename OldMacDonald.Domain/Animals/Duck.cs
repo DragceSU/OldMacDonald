@@ -1,34 +1,40 @@
-﻿#region
-
-using System;
-
-#endregion
-
-namespace OldMacDonald.Domain.Animals
+﻿namespace OldMacDonald.Domain.Animals
 {
+    using System;
+
     public class Duck : AnimalBase
     {
         public override AnimalTypeEnum Type
         {
-            get { return AnimalTypeEnum.Duck; }
+            get
+            {
+                return AnimalTypeEnum.Duck;
+            }
         }
 
         public override string AnimalName
         {
-            get { return "duck"; }
+            get
+            {
+                return "duck";
+            }
         }
 
         public override string AnimalSound
         {
-            get { return "quack"; }
+            get
+            {
+                return "quack";
+            }
         }
 
         protected override string GetAnimalNameAndSound()
         {
-            return _verse.Replace("@newLine", Environment.NewLine)
-                .Replace("@animal", AnimalName)
-                .Replace("@sound", AnimalSound)
-                .ToString();
+            return
+                this._verse.Replace("@newLine", Environment.NewLine)
+                    .Replace("@animal", this.AnimalName)
+                    .Replace("@sound", this.AnimalSound)
+                    .ToString();
         }
     }
 }

@@ -3,6 +3,7 @@
     public interface IAnimal
     {
         AnimalTypeEnum Type { get; }
+
         string GetGetAnimalNameAndSound();
     }
 }

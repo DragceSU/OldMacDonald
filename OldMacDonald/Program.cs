@@ -1,25 +1,36 @@
-﻿#region
-
-using System;
-using System.Collections.Generic;
-using Container;
-using Ninject;
-using OldMacDonald.BL;
-using OldMacDonald.Domain;
-
-#endregion
-
-namespace OldMacDonald
+﻿namespace OldMacDonald
 {
+    using System;
+    using System.Collections.Generic;
+
+    using Container;
+
+    using Ninject;
+
+    using OldMacDonald.BL;
+    using OldMacDonald.Domain;
+
     internal class Program
     {
         private static readonly Dictionary<string, string> _newAnimals = new Dictionary<string, string>
-        {
-            {"lion", "raw"},
-            {"crocodile", "cre"},
-            {"antelope", "snort"},
-            {"bat", "screec"}
-        };
+                                                                             {
+                                                                                 {
+                                                                                     "lion", 
+                                                                                     "raw"
+                                                                                 }, 
+                                                                                 {
+                                                                                     "crocodile", 
+                                                                                     "cre"
+                                                                                 }, 
+                                                                                 {
+                                                                                     "antelope", 
+                                                                                     "snort"
+                                                                                 }, 
+                                                                                 {
+                                                                                     "bat", 
+                                                                                     "screec"
+                                                                                 }
+                                                                             };
 
         private static void Main(string[] args)
         {

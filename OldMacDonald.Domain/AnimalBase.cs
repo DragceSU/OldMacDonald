@@ -1,16 +1,10 @@
-﻿#region
-
-using System;
-using System.Text;
-using OldMacDonald.Domain.Interfaces;
-
-#endregion
-
-namespace OldMacDonald.Domain
+﻿namespace OldMacDonald.Domain
 {
-
+    using System;
+    using System.Text;
 
     using OldMacDonald.Domain.Animals;
+    using OldMacDonald.Domain.Interfaces;
 
     public abstract class AnimalBase : IAnimal
     {
@@ -18,7 +12,21 @@ namespace OldMacDonald.Domain
 
         private AnimalBase Current
         {
-            get { return this; }
+            get
+            {
+                return this;
+            }
+        }
+
+        public abstract string AnimalName { get; }
+
+        public abstract string AnimalSound { get; }
+
+        public abstract AnimalTypeEnum Type { get; }
+
+        public string GetGetAnimalNameAndSound()
+        {
+            return this.Current.GetAnimalNameAndSound();
         }
 
         public static AnimalBase AnimalFactory(AnimalTypeEnum animalTypeEnum)
@@ -47,15 +55,6 @@ namespace OldMacDonald.Domain
             return createAnimal;
         }
 
-        public abstract string AnimalName { get; }
-        public abstract string AnimalSound { get; }
-        public abstract AnimalTypeEnum Type { get; }
-
-        public string GetGetAnimalNameAndSound()
-        {
-            return Current.GetAnimalNameAndSound();
-        }
-
         public static string GetInternalAnimalNameAndSound(string animal, string sound)
         {
             return GetAnimalNameAndSound(animal, sound);
@@ -63,12 +62,14 @@ namespace OldMacDonald.Domain
 
         protected abstract string GetAnimalNameAndSound();
 
-        public static string GetAnimalNameAndSound(string animal, string sound)
+        private static string GetAnimalNameAndSound(string animal, string sound)
         {
-            return Verse.GetDefaultVerse().Replace("@newLine", Environment.NewLine)
-                .Replace("@animal", animal)
-                .Replace("@sound", sound)
-                .ToString();
+            return
+                Verse.GetDefaultVerse()
+                    .Replace("@newLine", Environment.NewLine)
+                    .Replace("@animal", animal)
+                    .Replace("@sound", sound)
+                    .ToString();
         }
     }
 }

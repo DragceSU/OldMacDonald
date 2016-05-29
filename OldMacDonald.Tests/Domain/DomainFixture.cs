@@ -1,101 +1,102 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using OldMacDonald.Domain;
-using OldMacDonald.Domain.Animals;
-using Assert = Microsoft.VisualStudio.TestTools.UnitTesting.Assert;
-
-namespace OldMacDonald.Tests.MSTests
+﻿namespace OldMacDonald.Tests.MSTests
 {
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+
     using OldMacDonald.BL;
+    using OldMacDonald.Domain;
+    using OldMacDonald.Domain.Animals;
 
     [TestClass]
     public class DomainFixture
     {
         private Cat _cat;
-        private Dog _dog;
-        private Pig _pig;
+
         private Cow _cow;
+
+        private Dog _dog;
+
         private Duck _duck;
+
+        private Pig _pig;
 
         private AnimalManager<AnimalBase> animalManager;
 
         [TestMethod]
         public void AssertCatObjectConstuctionFixture()
         {
-            _cat = new Cat();
+            this._cat = new Cat();
 
-            Assert.AreEqual(AnimalTypeEnum.Cat, _cat.Type);
-            Assert.AreEqual("cat", _cat.AnimalName);
-            Assert.AreEqual("meow", _cat.AnimalSound);
+            Assert.AreEqual(AnimalTypeEnum.Cat, this._cat.Type);
+            Assert.AreEqual("cat", this._cat.AnimalName);
+            Assert.AreEqual("meow", this._cat.AnimalSound);
         }
 
         [TestMethod]
         public void AssertDogObjectConstuctionFixture()
         {
-            _dog = new Dog();
+            this._dog = new Dog();
 
-            Assert.AreEqual(AnimalTypeEnum.Dog, _dog.Type);
-            Assert.AreEqual("dog", _dog.AnimalName);
-            Assert.AreEqual("woof", _dog.AnimalSound);
+            Assert.AreEqual(AnimalTypeEnum.Dog, this._dog.Type);
+            Assert.AreEqual("dog", this._dog.AnimalName);
+            Assert.AreEqual("woof", this._dog.AnimalSound);
         }
 
         [TestMethod]
         public void AssertCowObjectConstuctionFixture()
         {
-            _cow = new Cow();
-            animalManager = new AnimalManager<AnimalBase>();
+            this._cow = new Cow();
+            this.animalManager = new AnimalManager<AnimalBase>();
 
-            Assert.AreEqual(AnimalTypeEnum.Cow, _cow.Type);
-            Assert.AreEqual("cow", _cow.AnimalName);
-            Assert.AreEqual("moo", _cow.AnimalSound);
-            Assert.IsTrue(animalManager.GetAnimals().Contains(_cow.GetGetAnimalNameAndSound()));
+            Assert.AreEqual(AnimalTypeEnum.Cow, this._cow.Type);
+            Assert.AreEqual("cow", this._cow.AnimalName);
+            Assert.AreEqual("moo", this._cow.AnimalSound);
+            Assert.IsTrue(this.animalManager.GetAnimals().Contains(this._cow.GetGetAnimalNameAndSound()));
         }
 
         [TestMethod]
         public void AssertDuckObjectConstuctionFixture()
         {
-            _duck = new Duck();
+            this._duck = new Duck();
 
-            Assert.AreEqual(AnimalTypeEnum.Duck, _duck.Type);
-            Assert.AreEqual("duck", _duck.AnimalName);
-            Assert.AreEqual("quack", _duck.AnimalSound);
+            Assert.AreEqual(AnimalTypeEnum.Duck, this._duck.Type);
+            Assert.AreEqual("duck", this._duck.AnimalName);
+            Assert.AreEqual("quack", this._duck.AnimalSound);
         }
 
         [TestMethod]
         public void AssertPigObjectConstuctionFixture()
         {
-            _pig = new Pig();
+            this._pig = new Pig();
 
-            Assert.AreEqual(AnimalTypeEnum.Pig, _pig.Type);
-            Assert.AreEqual("pig", _pig.AnimalName);
-            Assert.AreEqual("oink", _pig.AnimalSound);
+            Assert.AreEqual(AnimalTypeEnum.Pig, this._pig.Type);
+            Assert.AreEqual("pig", this._pig.AnimalName);
+            Assert.AreEqual("oink", this._pig.AnimalSound);
         }
 
         [TestMethod]
         public void AllAnimalsAreDifferentFixture()
         {
-            _dog = new Dog();
-            _cat = new Cat();
-            _cow = new Cow();
-            _duck = new Duck();
-            _pig = new Pig();
+            this._dog = new Dog();
+            this._cat = new Cat();
+            this._cow = new Cow();
+            this._duck = new Duck();
+            this._pig = new Pig();
 
-            Assert.AreNotEqual(_dog.Type, _cat.Type);
-            Assert.AreNotEqual(_dog.AnimalName, _cat.AnimalName);
-            Assert.AreNotEqual(_dog.AnimalSound, _cat.AnimalSound);
+            Assert.AreNotEqual(this._dog.Type, this._cat.Type);
+            Assert.AreNotEqual(this._dog.AnimalName, this._cat.AnimalName);
+            Assert.AreNotEqual(this._dog.AnimalSound, this._cat.AnimalSound);
 
-            Assert.AreNotEqual(_cow.Type, _cat.Type);
-            Assert.AreNotEqual(_cow.AnimalName, _cat.AnimalName);
-            Assert.AreNotEqual(_cow.AnimalSound, _cat.AnimalSound);
+            Assert.AreNotEqual(this._cow.Type, this._cat.Type);
+            Assert.AreNotEqual(this._cow.AnimalName, this._cat.AnimalName);
+            Assert.AreNotEqual(this._cow.AnimalSound, this._cat.AnimalSound);
 
-            Assert.AreNotEqual(_duck.Type, _cow.Type);
-            Assert.AreNotEqual(_duck.AnimalName, _cow.AnimalName);
-            Assert.AreNotEqual(_duck.AnimalSound, _cow.AnimalSound);
+            Assert.AreNotEqual(this._duck.Type, this._cow.Type);
+            Assert.AreNotEqual(this._duck.AnimalName, this._cow.AnimalName);
+            Assert.AreNotEqual(this._duck.AnimalSound, this._cow.AnimalSound);
 
-            Assert.AreNotEqual(_pig.Type, _duck.Type);
-            Assert.AreNotEqual(_pig.AnimalName, _duck.AnimalName);
-            Assert.AreNotEqual(_pig.AnimalSound, _duck.AnimalSound);
+            Assert.AreNotEqual(this._pig.Type, this._duck.Type);
+            Assert.AreNotEqual(this._pig.AnimalName, this._duck.AnimalName);
+            Assert.AreNotEqual(this._pig.AnimalSound, this._duck.AnimalSound);
         }
     }
 }
-

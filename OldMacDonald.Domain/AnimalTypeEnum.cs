@@ -2,10 +2,14 @@
 {
     public enum AnimalTypeEnum
     {
-        Cow = 0,
-        Dog,
-        Cat,
-        Pig,
+        Cow = 0, 
+
+        Dog, 
+
+        Cat, 
+
+        Pig, 
+
         Duck
     }
 }
