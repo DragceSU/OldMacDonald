@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
+VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OldMacDonald", "OldMacDonald\OldMacDonald.csproj", "{3C58B705-0D24-487E-96D8-165E1D55D49B}"
 EndProject
@@ -21,7 +21,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Container", "Container\Cont
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{7C8CCAAC-B4C7-4456-AB04-73D0A1C73F1E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OldMacDonald.Tests", "OldMacDonald.Tests\OldMacDonald.Tests.csproj", "{7B815E6D-9160-4304-A53D-FE32FDF8920E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OldMacDonald.MSTests", "OldMacDonald.Tests\OldMacDonald.MSTests.csproj", "{7B815E6D-9160-4304-A53D-FE32FDF8920E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{E53635BF-B377-43FA-8C9E-2C0069ABDB87}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\packages.config = .nuget\packages.config
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OldMacDonald.NUnitTests", "OldMacDonald.UnitTests\OldMacDonald.NUnitTests.csproj", "{B06FF543-500B-4E2D-A869-7EA8EC0F9C97}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -49,6 +56,10 @@ Global
 		{7B815E6D-9160-4304-A53D-FE32FDF8920E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7B815E6D-9160-4304-A53D-FE32FDF8920E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7B815E6D-9160-4304-A53D-FE32FDF8920E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B06FF543-500B-4E2D-A869-7EA8EC0F9C97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B06FF543-500B-4E2D-A869-7EA8EC0F9C97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B06FF543-500B-4E2D-A869-7EA8EC0F9C97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B06FF543-500B-4E2D-A869-7EA8EC0F9C97}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -59,5 +70,6 @@ Global
 		{67AB08FB-1055-4C2B-991A-A8B7C919FBF7} = {A23FA49F-CCF0-42BA-A361-EB84BFC543C6}
 		{B598E2B9-735D-4CF9-9C5F-A51EF86C84A1} = {73A9D97C-77CD-4F11-9163-DB705DA204D8}
 		{7B815E6D-9160-4304-A53D-FE32FDF8920E} = {7C8CCAAC-B4C7-4456-AB04-73D0A1C73F1E}
+		{B06FF543-500B-4E2D-A869-7EA8EC0F9C97} = {7C8CCAAC-B4C7-4456-AB04-73D0A1C73F1E}
 	EndGlobalSection
 EndGlobal

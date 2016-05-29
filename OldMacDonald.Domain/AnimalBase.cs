@@ -8,6 +8,10 @@ using OldMacDonald.Domain.Interfaces;
 
 namespace OldMacDonald.Domain
 {
+
+
+    using OldMacDonald.Domain.Animals;
+
     public abstract class AnimalBase : IAnimal
     {
         protected StringBuilder _verse = Verse.GetDefaultVerse();
@@ -15,6 +19,35 @@ namespace OldMacDonald.Domain
         private AnimalBase Current
         {
             get { return this; }
+        }
+
+        public static AnimalBase AnimalFactory(AnimalType animalType)
+        {
+            AnimalBase createAnimal;
+
+            switch (animalType)
+            {
+                case AnimalType.Cat:
+                    createAnimal = new Cat();
+                    break;
+                case AnimalType.Cow:
+                    createAnimal = new Cow();
+                    break;
+                case AnimalType.Dog:
+                    createAnimal = new Dog();
+                    break;
+                case AnimalType.Duck:
+                    createAnimal = new Duck();
+                    break;
+                case AnimalType.Pig:
+                    createAnimal = new Pig();
+                    break;
+                default:
+                    createAnimal = null;
+                    break;
+            }
+
+            return createAnimal;
         }
 
         public abstract string AnimalName { get; }

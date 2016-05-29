@@ -20,7 +20,7 @@ namespace OldMacDonald.BL
             {
                 AnimalType type;
                 if (!Enum.TryParse(initializeAnimalCounter.ToString(), false, out type)) continue;
-                if (Enum.IsDefined(typeof (AnimalType), type))
+                if (Enum.IsDefined(typeof(AnimalType), type))
                 {
                     textToBeReturned.Append(InitializeAnimal(type).GetGetAnimalNameAndSound());
                     initializeAnimalCounter++;
@@ -37,19 +37,19 @@ namespace OldMacDonald.BL
             switch (type)
             {
                 case AnimalType.Cow:
-                    animalObject = new Cow() as T;
+                    animalObject = AnimalBase.AnimalFactory(type) as T;
                     break;
                 case AnimalType.Dog:
-                    animalObject = new Dog() as T;
+                    animalObject = AnimalBase.AnimalFactory(type) as T;
                     break;
                 case AnimalType.Cat:
-                    animalObject = new Cat() as T;
+                    animalObject = AnimalBase.AnimalFactory(type) as T;
                     break;
                 case AnimalType.Pig:
-                    animalObject = new Pig() as T;
+                    animalObject = AnimalBase.AnimalFactory(type) as T;
                     break;
                 case AnimalType.Duck:
-                    animalObject = new Duck() as T;
+                    animalObject = AnimalBase.AnimalFactory(type) as T;
                     break;
             }
 

@@ -1,14 +1,15 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 using OldMacDonald.Domain;
 using OldMacDonald.Domain.Animals;
 using Assert = Microsoft.VisualStudio.TestTools.UnitTesting.Assert;
 
-namespace OldMacDonald.Tests.MSTests
+namespace OldMacDonald.Tests.Core
 {
     using OldMacDonald.BL;
 
-    [TestClass]
+    [TestFixture]
     public class DomainFixture
     {
         private Cat _cat;
@@ -19,7 +20,7 @@ namespace OldMacDonald.Tests.MSTests
 
         private AnimalManager<AnimalBase> animalManager;
 
-        [TestMethod]
+        [Test]
         public void AssertCatObjectConstuctionFixture()
         {
             _cat = new Cat();
@@ -29,7 +30,7 @@ namespace OldMacDonald.Tests.MSTests
             Assert.AreEqual("meow", _cat.AnimalSound);
         }
 
-        [TestMethod]
+        [Test]
         public void AssertDogObjectConstuctionFixture()
         {
             _dog = new Dog();
@@ -39,7 +40,7 @@ namespace OldMacDonald.Tests.MSTests
             Assert.AreEqual("woof", _dog.AnimalSound);
         }
 
-        [TestMethod]
+        [Test]
         public void AssertCowObjectConstuctionFixture()
         {
             _cow = new Cow();
@@ -51,7 +52,7 @@ namespace OldMacDonald.Tests.MSTests
             Assert.IsTrue(animalManager.GetAnimals().Contains(_cow.GetGetAnimalNameAndSound()));
         }
 
-        [TestMethod]
+        [Test]
         public void AssertDuckObjectConstuctionFixture()
         {
             _duck = new Duck();
@@ -61,7 +62,7 @@ namespace OldMacDonald.Tests.MSTests
             Assert.AreEqual("quack", _duck.AnimalSound);
         }
 
-        [TestMethod]
+        [Test]
         public void AssertPigObjectConstuctionFixture()
         {
             _pig = new Pig();
@@ -71,7 +72,7 @@ namespace OldMacDonald.Tests.MSTests
             Assert.AreEqual("oink", _pig.AnimalSound);
         }
 
-        [TestMethod]
+        [Test]
         public void AllAnimalsAreDifferentFixture()
         {
             _dog = new Dog();

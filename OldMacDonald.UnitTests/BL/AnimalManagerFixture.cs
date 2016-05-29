@@ -1,20 +1,21 @@
-﻿#region
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-using System;
-using System.IO;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Moq;
-using OldMacDonald.BL;
-using OldMacDonald.BL.Interfaces;
-using OldMacDonald.Domain;
-using OldMacDonald.Domain.Animals;
-using Assert = Microsoft.VisualStudio.TestTools.UnitTesting.Assert;
-
-#endregion
-
-namespace OldMacDonald.MSTests.BL
+namespace OldMacDonald.NUnitTests.BL
 {
-    [TestClass]
+    using Moq;
+
+    using NUnit.Framework;
+
+    using OldMacDonald.BL;
+    using OldMacDonald.BL.Interfaces;
+    using OldMacDonald.Domain;
+    using OldMacDonald.Domain.Animals;
+
+    [TestFixture]
     public class AnimalManagerFixture
     {
         private readonly string _originalVerse = "Old MacDonald had a farm, E I E I O,@newLine" +
@@ -28,7 +29,7 @@ namespace OldMacDonald.MSTests.BL
         private Mock<IAnimalManager<AnimalBase>> _originalVerseMOQ;
         private AnimalManager<AnimalBase> animalManager;
 
-        [TestInitialize]
+        [SetUp]
         public void InitializeUnitTests()
         {
             _animalName = "cat";
@@ -36,7 +37,7 @@ namespace OldMacDonald.MSTests.BL
             _originalVerseMOQ = new Mock<IAnimalManager<AnimalBase>>();
         }
 
-        [TestCleanup]
+        [TearDown]
         public void DestructAllObjects()
         {
             _animalName = null;
@@ -44,7 +45,7 @@ namespace OldMacDonald.MSTests.BL
             _originalVerseMOQ = null;
         }
 
-        [TestMethod]
+        [Test]
         public void GetAnimalsIsCorrectFixture()
         {
             _originalVerseMOQ.Setup(manager => manager.GetAnimals()).Returns(_originalVerse);
@@ -56,10 +57,10 @@ namespace OldMacDonald.MSTests.BL
                 .Replace("@animal", _animalName)
                 .Replace("@sound", _animalSound);
 
-            Assert.AreEqual(animal, getAnimalFromBase);
+            Assert.That(animal, Is.EqualTo(getAnimalFromBase));
         }
 
-        [TestMethod]
+        [Test]
         public void InitializeCustomAnimalFixture()
         {
             string managedVerse = _originalVerse.Replace("@newLine", Environment.NewLine)
@@ -70,31 +71,33 @@ namespace OldMacDonald.MSTests.BL
                 .Replace("@animal", _animalName)
                 .Replace("@sound", _animalSound);
 
-            Assert.AreEqual(managedVerse, getAnimalFromBase);
+            Assert.That(managedVerse, Is.EqualTo(getAnimalFromBase));
         }
 
-        [TestMethod]
+        [Test]
         public void GetAllAnimalsFixture()
         {
             animalManager = new AnimalManager<AnimalBase>();
 
             string getAllAnimals = animalManager.GetAnimals();
 
-            Assert.IsTrue(getAllAnimals.Contains(new Cat().GetGetAnimalNameAndSound()));
-            Assert.IsTrue(getAllAnimals.Contains(new Dog().GetGetAnimalNameAndSound()));
-            Assert.IsTrue(getAllAnimals.Contains(new Cow().GetGetAnimalNameAndSound()));
-            Assert.IsTrue(getAllAnimals.Contains(new Duck().GetGetAnimalNameAndSound()));
-            Assert.IsTrue(getAllAnimals.Contains(new Pig().GetGetAnimalNameAndSound()));
+            Assert.That(getAllAnimals, Contains.Substring(new Cat().GetGetAnimalNameAndSound()));
+            Assert.That(getAllAnimals, Contains.Substring((new Dog().GetGetAnimalNameAndSound())));
+            Assert.That(getAllAnimals, Contains.Substring((new Cow().GetGetAnimalNameAndSound())));
+            Assert.That(getAllAnimals, Contains.Substring((new Duck().GetGetAnimalNameAndSound())));
+            Assert.That(getAllAnimals, Contains.Substring((new Pig().GetGetAnimalNameAndSound())));
         }
 
-        [TestMethod]
+        [Test]
         public void DoesNotTigerlAnimalsFixture()
         {
             AnimalManager<AnimalBase> animalManager = new AnimalManager<AnimalBase>();
 
-            string getallAnimals = animalManager.GetAnimals();
+            _originalVerseMOQ.Setup(p => p.GetAnimals()).Returns(_originalVerse);
 
-            Assert.IsFalse(getallAnimals.Contains("tiger"));
+            string getallAnimals = _originalVerseMOQ.Object.GetAnimals();
+
+            Assert.That(getallAnimals, !Contains.Substring("tiger"));
         }
     }
 }
