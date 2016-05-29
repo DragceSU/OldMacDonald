@@ -1,5 +1,7 @@
 ﻿namespace OldMacDonald.MSTests.BL
 {
+    #region
+
     using System;
 
     using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -10,6 +12,8 @@
     using OldMacDonald.BL.Interfaces;
     using OldMacDonald.Domain;
     using OldMacDonald.Domain.Animals;
+
+    #endregion
 
     [TestClass]
     public class AnimalManagerFixture
@@ -48,13 +52,13 @@
         public void GetAnimalsIsCorrectFixture()
         {
             this._originalVerseMOQ.Setup(manager => manager.GetAnimals()).Returns(this._originalVerse);
-            string animal =
+            var animal =
                 this._originalVerseMOQ.Object.GetAnimals()
                     .Replace("@newLine", Environment.NewLine)
                     .Replace("@animal", this._animalName)
                     .Replace("@sound", this._animalSound);
 
-            string getAnimalFromBase =
+            var getAnimalFromBase =
                 AnimalManager<AnimalBase>.InitializeCustomAnimal(this._animalName, this._animalSound)
                     .Replace("@newLine", Environment.NewLine)
                     .Replace("@animal", this._animalName)
@@ -66,12 +70,12 @@
         [TestMethod]
         public void InitializeCustomAnimalFixture()
         {
-            string managedVerse =
+            var managedVerse =
                 this._originalVerse.Replace("@newLine", Environment.NewLine)
                     .Replace("@animal", this._animalName)
                     .Replace("@sound", this._animalSound);
 
-            string getAnimalFromBase =
+            var getAnimalFromBase =
                 AnimalManager<AnimalBase>.InitializeCustomAnimal(this._animalName, this._animalSound)
                     .Replace("@newLine", Environment.NewLine)
                     .Replace("@animal", this._animalName)
@@ -85,7 +89,7 @@
         {
             this.animalManager = new AnimalManager<AnimalBase>();
 
-            string getAllAnimals = this.animalManager.GetAnimals();
+            var getAllAnimals = this.animalManager.GetAnimals();
 
             Assert.IsTrue(getAllAnimals.Contains(new Cat().GetGetAnimalNameAndSound()));
             Assert.IsTrue(getAllAnimals.Contains(new Dog().GetGetAnimalNameAndSound()));
@@ -97,9 +101,9 @@
         [TestMethod]
         public void DoesNotTigerlAnimalsFixture()
         {
-            AnimalManager<AnimalBase> animalManager = new AnimalManager<AnimalBase>();
+            var animalManager = new AnimalManager<AnimalBase>();
 
-            string getallAnimals = animalManager.GetAnimals();
+            var getallAnimals = animalManager.GetAnimals();
 
             Assert.IsFalse(getallAnimals.Contains("tiger"));
         }

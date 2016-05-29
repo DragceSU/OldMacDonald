@@ -1,24 +1,18 @@
 ﻿namespace OldMacDonald.NUnitTests.Domain
 {
+    #region
+
     using NUnit.Framework;
 
     using OldMacDonald.BL;
     using OldMacDonald.Domain;
     using OldMacDonald.Domain.Animals;
 
+    #endregion
+
     [TestFixture]
     public class Domain
     {
-        [SetUp]
-        public void InitializeTests()
-        {
-            _dog = new Dog();
-            _cat = new Cat();
-            _cow = new Cow();
-            _duck = new Duck();
-            _pig = new Pig();
-        }
-
         private static Cat _cat;
 
         private static Dog _dog;
@@ -30,6 +24,16 @@
         private static Duck _duck;
 
         private AnimalManager<AnimalBase> animalManager;
+
+        [SetUp]
+        public void InitializeTests()
+        {
+            _dog = new Dog();
+            _cat = new Cat();
+            _cow = new Cow();
+            _duck = new Duck();
+            _pig = new Pig();
+        }
 
         [Test]
         [MaxTime(500)]

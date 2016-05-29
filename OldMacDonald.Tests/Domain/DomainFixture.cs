@@ -1,10 +1,14 @@
 ﻿namespace OldMacDonald.Tests.MSTests
 {
+    #region
+
     using Microsoft.VisualStudio.TestTools.UnitTesting;
 
     using OldMacDonald.BL;
     using OldMacDonald.Domain;
     using OldMacDonald.Domain.Animals;
+
+    #endregion
 
     [TestClass]
     public class DomainFixture

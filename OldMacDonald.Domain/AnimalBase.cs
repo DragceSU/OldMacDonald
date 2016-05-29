@@ -1,10 +1,14 @@
 ﻿namespace OldMacDonald.Domain
 {
+    #region
+
     using System;
     using System.Text;
 
     using OldMacDonald.Domain.Animals;
     using OldMacDonald.Domain.Interfaces;
+
+    #endregion
 
     public abstract class AnimalBase : IAnimal
     {

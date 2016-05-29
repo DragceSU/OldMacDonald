@@ -21,7 +21,11 @@
             while (true)
             {
                 AnimalTypeEnum type;
-                if (!Enum.TryParse(initializeAnimalCounter.ToString(), false, out type)) continue;
+                if (!Enum.TryParse(initializeAnimalCounter.ToString(), false, out type))
+                {
+                    continue;
+                }
+
                 if (Enum.IsDefined(typeof(AnimalTypeEnum), type))
                 {
                     textToBeReturned.Append(InitializeAnimal(type).GetGetAnimalNameAndSound());

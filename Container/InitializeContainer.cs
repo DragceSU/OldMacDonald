@@ -1,10 +1,14 @@
 ﻿namespace Container
 {
+    #region
+
     using Ninject;
 
     using OldMacDonald.BL;
     using OldMacDonald.BL.Interfaces;
     using OldMacDonald.Domain;
+
+    #endregion
 
     public class InitializeContainer
     {

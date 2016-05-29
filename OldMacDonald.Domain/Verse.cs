@@ -1,6 +1,10 @@
 ﻿namespace OldMacDonald.Domain
 {
+    #region
+
     using System.Text;
+
+    #endregion
 
     public static class Verse
     {
