@@ -63,37 +63,37 @@
             Assert.That(managedVerse, Is.EqualTo(getAnimalFromBase));
         }
 
-        [Test]
-        [MaxTime(500)]
-        public void ShouldGetAnimalsIsCorrectly()
-        {
-            this._originalVerseMOQ.Setup(manager => manager.GetAnimals()).Returns(this._originalVerse);
-            string animal =
-                this._originalVerseMOQ.Object.GetAnimals()
-                    .Replace("@newLine", Environment.NewLine)
-                    .Replace("@animal", this._animalName)
-                    .Replace("@sound", this._animalSound);
+        //[Test]
+        //[MaxTime(500)]
+        //public void ShouldGetAnimalsIsCorrectly()
+        //{
+        //    this._originalVerseMOQ.Setup(manager => manager.GetAnimals()).Returns(this._originalVerse);
+        //    string animal =
+        //        this._originalVerseMOQ.Object.GetAnimals()
+        //            .Replace("@newLine", Environment.NewLine)
+        //            .Replace("@animal", this._animalName)
+        //            .Replace("@sound", this._animalSound);
 
-            string getAnimalFromBase =
-                AnimalManager<AnimalBase>.InitializeCustomAnimal(this._animalName, this._animalSound)
-                    .Replace("@newLine", Environment.NewLine)
-                    .Replace("@animal", this._animalName)
-                    .Replace("@sound", this._animalSound);
+        //    string getAnimalFromBase =
+        //        AnimalManager<AnimalBase>.InitializeCustomAnimal(this._animalName, this._animalSound)
+        //            .Replace("@newLine", Environment.NewLine)
+        //            .Replace("@animal", this._animalName)
+        //            .Replace("@sound", this._animalSound);
 
-            Assert.That(animal, Is.EqualTo(getAnimalFromBase));
-        }
+        //    Assert.That(animal, Is.EqualTo(getAnimalFromBase));
+        //}
 
-        [Test]
-        [MaxTime(500)]
-        public void TigerShouldNotBelongToAnimals()
-        {
-            AnimalManager<AnimalBase> animalManager = new AnimalManager<AnimalBase>();
+        //[Test]
+        //[MaxTime(500)]
+        //public void TigerShouldNotBelongToAnimals()
+        //{
+        //    AnimalManager<AnimalBase> animalManager = new AnimalManager<AnimalBase>();
 
-            this._originalVerseMOQ.Setup(p => p.GetAnimals()).Returns(this._originalVerse);
+        //    this._originalVerseMOQ.Setup(p => p.GetAnimals()).Returns(this._originalVerse);
 
-            string getallAnimals = this._originalVerseMOQ.Object.GetAnimals();
+        //    string getallAnimals = this._originalVerseMOQ.Object.GetAnimals();
 
-            Assert.That(getallAnimals, !Contains.Substring("tiger"));
-        }
+        //    Assert.That(getallAnimals, !Contains.Substring("tiger"));
+        //}
     }
 }
