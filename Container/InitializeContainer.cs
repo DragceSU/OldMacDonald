@@ -10,7 +10,7 @@
 
     #endregion
 
-    public class InitializeContainer
+    public static class InitializeContainer
     {
         public static void Register(IKernel kernel)
         {
