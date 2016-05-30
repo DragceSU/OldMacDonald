@@ -13,17 +13,10 @@ namespace OldMacDonald.Domain
 
     #endregion
 
-    /// <summary>
-    /// The verse.
-    /// </summary>
+  
     public static class Verse
     {
-        /// <summary>
-        /// The get default verse.
-        /// </summary>
-        /// <returns>
-        /// The <see cref="StringBuilder"/>.
-        /// </returns>
+    
         public static StringBuilder GetDefaultVerse()
         {
             return

@@ -13,14 +13,10 @@ namespace OldMacDonald.Domain.Animals
 
     #endregion
 
-    /// <summary>
-    /// The dog.
-    /// </summary>
+
     public class Dog : AnimalBase
     {
-        /// <summary>
-        /// Gets the type.
-        /// </summary>
+      
         public override AnimalTypeEnum Type
         {
             get
@@ -29,9 +25,6 @@ namespace OldMacDonald.Domain.Animals
             }
         }
 
-        /// <summary>
-        /// Gets the animal name.
-        /// </summary>
         public override string AnimalName
         {
             get
@@ -40,9 +33,7 @@ namespace OldMacDonald.Domain.Animals
             }
         }
 
-        /// <summary>
-        /// Gets the animal sound.
-        /// </summary>
+       
         public override string AnimalSound
         {
             get
@@ -51,12 +42,7 @@ namespace OldMacDonald.Domain.Animals
             }
         }
 
-        /// <summary>
-        /// The get animal name and sound.
-        /// </summary>
-        /// <returns>
-        /// The <see cref="string"/>.
-        /// </returns>
+       
         protected override string GetAnimalNameAndSound()
         {
             return

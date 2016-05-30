@@ -17,19 +17,13 @@ namespace OldMacDonald.Domain
 
     #endregion
 
-    /// <summary>
-    /// The animal base.
-    /// </summary>
+   
     public abstract class AnimalBase : IAnimal
     {
-        /// <summary>
-        /// The _verse.
-        /// </summary>
+       
         protected StringBuilder _verse = Verse.GetDefaultVerse();
 
-        /// <summary>
-        /// Gets the current.
-        /// </summary>
+       
         private AnimalBase Current
         {
             get
@@ -38,41 +32,22 @@ namespace OldMacDonald.Domain
             }
         }
 
-        /// <summary>
-        /// Gets the animal name.
-        /// </summary>
+       
         public abstract string AnimalName { get; }
 
-        /// <summary>
-        /// Gets the animal sound.
-        /// </summary>
+     
         public abstract string AnimalSound { get; }
 
-        /// <summary>
-        /// Gets the type.
-        /// </summary>
+      
         public abstract AnimalTypeEnum Type { get; }
 
-        /// <summary>
-        /// The get get animal name and sound.
-        /// </summary>
-        /// <returns>
-        /// The <see cref="string"/>.
-        /// </returns>
+      
         public string GetGetAnimalNameAndSound()
         {
             return this.Current.GetAnimalNameAndSound();
         }
 
-        /// <summary>
-        /// The animal factory.
-        /// </summary>
-        /// <param name="animalTypeEnum">
-        /// The animal type enum.
-        /// </param>
-        /// <returns>
-        /// The <see cref="AnimalBase"/>.
-        /// </returns>
+       
         public static AnimalBase AnimalFactory(AnimalTypeEnum animalTypeEnum)
         {
             AnimalBase createAnimal = null;
@@ -99,43 +74,16 @@ namespace OldMacDonald.Domain
             return createAnimal;
         }
 
-        /// <summary>
-        /// The get internal animal name and sound.
-        /// </summary>
-        /// <param name="animal">
-        /// The animal.
-        /// </param>
-        /// <param name="sound">
-        /// The sound.
-        /// </param>
-        /// <returns>
-        /// The <see cref="string"/>.
-        /// </returns>
+       
         public static string GetInternalAnimalNameAndSound(string animal, string sound)
         {
             return GetAnimalNameAndSound(animal, sound);
         }
 
-        /// <summary>
-        /// The get animal name and sound.
-        /// </summary>
-        /// <returns>
-        /// The <see cref="string"/>.
-        /// </returns>
+       
         protected abstract string GetAnimalNameAndSound();
 
-        /// <summary>
-        /// The get animal name and sound.
-        /// </summary>
-        /// <param name="animal">
-        /// The animal.
-        /// </param>
-        /// <param name="sound">
-        /// The sound.
-        /// </param>
-        /// <returns>
-        /// The <see cref="string"/>.
-        /// </returns>
+      
         private static string GetAnimalNameAndSound(string animal, string sound)
         {
             return
