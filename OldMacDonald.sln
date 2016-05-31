@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.40629.0
+VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OldMacDonald", "OldMacDonald\OldMacDonald.csproj", "{3C58B705-0D24-487E-96D8-165E1D55D49B}"
 EndProject
@@ -36,8 +36,8 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{3C58B705-0D24-487E-96D8-165E1D55D49B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3C58B705-0D24-487E-96D8-165E1D55D49B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C58B705-0D24-487E-96D8-165E1D55D49B}.Debug|Any CPU.ActiveCfg = Release|Any CPU
+		{3C58B705-0D24-487E-96D8-165E1D55D49B}.Debug|Any CPU.Build.0 = Release|Any CPU
 		{3C58B705-0D24-487E-96D8-165E1D55D49B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3C58B705-0D24-487E-96D8-165E1D55D49B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{75CA9C68-D482-44A1-89B5-B723090ECE3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -52,6 +52,7 @@ Global
 		{B598E2B9-735D-4CF9-9C5F-A51EF86C84A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B598E2B9-735D-4CF9-9C5F-A51EF86C84A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B598E2B9-735D-4CF9-9C5F-A51EF86C84A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B598E2B9-735D-4CF9-9C5F-A51EF86C84A1}.Release|Any CPU.Deploy.0 = Release|Any CPU
 		{7B815E6D-9160-4304-A53D-FE32FDF8920E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{7B815E6D-9160-4304-A53D-FE32FDF8920E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7B815E6D-9160-4304-A53D-FE32FDF8920E}.Release|Any CPU.ActiveCfg = Release|Any CPU
